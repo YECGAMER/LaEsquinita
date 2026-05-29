@@ -1,4 +1,3 @@
 # LaEsquinita
-// Prueba de repositorio
-xddddddd
-#eeeeee
+// Pagina web de organizacion de tareas
+
