@@ -1,4 +1,2 @@
 # LaEsquinita
-// Prueba de repositorio
-xddddddd
-#eeeeee
+// Pagina web de Administrador y organizador de tareas
