@@ -3,15 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta 
-        name="description" 
-        content="La Esquinita "
-    >
-    <meta 
-        name="keywords" 
-        content="Tareas, Costa Rica, programación, inteligencia artificial, ciberseguridad, desarrollo web"
-    >
-    <meta name="author" content="TechEvents CR">
+    <meta name="description" content="La Esquinita - Organiza tus tareas universitarias y controla tus entregas desde cualquier dispositivo." />
+    <meta name="keywords" content="tareas universitarias, organización, calendario, pendientes, localStorage, La Esquinita" />
+    <link rel="stylesheet" href="styles.css">
 
     <title>La Esquinita | Inicio</title>
 </head>
@@ -19,7 +13,14 @@
 <body>
 
 <header>
-    <p><strong>La Esquinita</strong>, tus tareas, tu éxito</p>
+    <div class="container">
+    <div class="brand-header">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <div>
+            <p class="brand-name"><strong>La Esquinita</strong></p>
+            <p class="brand-tagline">Organiza · Planifica · Logra</p>
+        </div>
+    </div>
     <nav>
         <ul>
             <li><a href="index.html">Inicio</a></li>
@@ -29,29 +30,32 @@
             <li><a href="acerca.html">Acerca de</a></li>
         </ul>
     </nav>
+    </div>
 </header>
 
 <main>
+    <div class="container">
     <section>
         <h1>Bienvenido a La Esquinita</h1>
-        <p>Somos un sitio para ayudarte con tus tareas, calificaciones y dudas escolares.</p>
-        <p>Encuentra recursos, revisa tus tareas y ponte en contacto con nosotros ante cualquier duda.</p>
-        <div>
-            <a href="tareas.html">Ver tareas</a>
-            <a href="calificaciones.html">Ver calificaciones</a>
-            <a href="contacto.html">Contacto</a>
+        <p>Tu rincón para organizar tareas universitarias, planificar entregas y mantener todo en un solo lugar.</p>
+        <p>Usa la aplicación para buscar tareas, filtrar por curso y guardar tu lista con persistencia en el navegador.</p>
+        <div class="button-row">
+            <a class="button button-primary button-ver-tareas" href="tareas.html">Ver tareas</a>
+            <a class="button button-primary button-organizador" href="eventos.html">Organizador</a>
+            <a class="button button-primary button-acerca" href="acerca.html">Acerca de</a>
         </div>
     </section>
 
     <section>
         <h2>¿Qué puedes encontrar aquí?</h2>
         <ul>
-            <li>Apoyo para tus tareas escolares</li>
-            <li>Información sobre calificaciones</li>
-            <li>Formularios de contacto para pedir ayuda</li>
-            <li>Acerca de nuestro equipo y misión</li>
+            <li>Lista de tareas desde JSON</li>
+            <li>Filtro por curso o estado</li>
+            <li>Búsqueda instantánea</li>
+            <li>Marcar tareas completadas y guardar tus propias tareas</li>
         </ul>
     </section>
+    </div>
 </main>
 
 <footer>

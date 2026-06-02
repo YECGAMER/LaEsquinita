@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La Esquinita - Sistema de organización de tareas universitarias con filtros y almacenamiento local." />
+    <meta name="keywords" content="tareas universitarias, organizar, localStorage, filtros, búsqueda" />
+    <link rel="stylesheet" href="styles.css">
+    <title>La Esquinita | Tareas</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+        <div class="brand-header">
+            <div class="brand-logo" aria-hidden="true"></div>
+            <div>
+                <p class="brand-name"><strong>La Esquinita</strong></p>
+                <p class="brand-tagline">Tu rincón para tareas universitarias</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="tareas.html">Tareas</a></li>
+                <li><a href="calificaciones.html">Calificaciones</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="acerca.html">Acerca de</a></li>
+                <li><a href="eventos.html">Organizador</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+        <section>
+            <h1>Bienvenido a tu rincón de estudio</h1>
+            <p>Este es el diseño inicial de la interfaz para organizar tareas universitarias.</p>
+            <p>Pronto podrás buscar, filtrar y controlar tus pendientes en este espacio.</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <p>Total de tareas</p>
+                    <strong>--</strong>
+                </div>
+                <div class="stat-card">
+                    <p>Completadas</p>
+                    <strong>--</strong>
+                </div>
+                <div class="stat-card">
+                    <p>Pendientes</p>
+                    <strong>--</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="controls-grid">
+            <div class="control-card">
+                <label for="search-input">Buscar tareas</label>
+                <input id="search-input" type="search" placeholder="Busca por título, curso o palabra clave" autocomplete="off">
+            </div>
+            <div class="control-card">
+                <label for="course-filter">Filtrar por curso</label>
+                <select id="course-filter"></select>
+            </div>
+            <div class="control-card">
+                <label for="status-filter">Filtrar por estado</label>
+                <select id="status-filter">
+                    <option value="todos">Todos</option>
+                    <option value="pendiente">Pendientes</option>
+                    <option value="completada">Completadas</option>
+                </select>
+            </div>
+            <div class="control-card control-actions">
+                <p class="help-text">Los filtros se aplican al instante.</p>
+                <button class="button button-secondary button-limpiar-filtros" id="clear-filters" type="button">Limpiar filtros</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>Lista de tareas</h2>
+            <div id="tasks-list" class="tasks-grid"></div>
+            <p id="empty-state" class="empty-state">No hay tareas para mostrar. Agrega una tarea nueva o ajusta tus filtros.</p>
+        </section>
+
+        <section>
+            <h2>Agregar nueva tarea</h2>
+            <form id="task-form" class="form-grid">
+                <div class="field-group">
+                    <label for="task-title">Título de la tarea</label>
+                    <input id="task-title" type="text" placeholder="Título de la tarea" required>
+                </div>
+                <div class="field-group">
+                    <label for="task-course">Curso</label>
+                    <input id="task-course" type="text" placeholder="Nombre del curso" required>
+                </div>
+                <div class="field-group">
+                    <label for="task-date">Fecha de entrega</label>
+                    <input id="task-date" type="date" required>
+                </div>
+                <div class="field-group field-full">
+                    <label for="task-description">Descripción</label>
+                    <textarea id="task-description" rows="4" placeholder="Descripción breve"></textarea>
+                </div>
+                <button class="button button-primary button-agregar-tarea" type="submit">Agregar tarea</button>
+            </form>
+        </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>Contacto: info@laesquinita.cr</p>
+        <p>© 2026 La Esquinita</p>
+    </footer>
+</body>
+</html>

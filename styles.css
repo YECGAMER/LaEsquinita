@@ -1,0 +1,386 @@
+/* Estilos generales para La Esquinita */
+:root {
+    color-scheme: light;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    background-color: #F8F9F4;
+    color: #344E41;
+    --bg: #F8F9F4;
+    --primary: #A3B18A;
+    --primary-dark: #588157;
+    --primary-deep: #3A5A40;
+    --card: #DAD7CD;
+    --accent: #BC6C25;
+    --text: #344E41;
+    --muted: #6D7A66;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.container {
+    width: min(1024px, 90%);
+    margin: 0 auto;
+}
+
+header {
+    background: #FFFFFF;
+    color: var(--primary-deep);
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(86, 112, 80, 0.18);
+}
+
+main {
+    padding: 32px 0 48px;
+}
+
+header p {
+    margin: 0;
+}
+
+.brand-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.brand-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, var(--brand-base), #3f5f46);
+    box-shadow: inset 0 0 0 3px rgba(255,255,255,0.35);
+    position: relative;
+    flex-shrink: 0;
+}
+
+.brand-logo::before,
+.brand-logo::after {
+    content: "";
+    position: absolute;
+    border-radius: 999px;
+    background: var(--brand-warm);
+}
+
+.brand-logo::before {
+    width: 36px;
+    height: 36px;
+    left: 12px;
+    top: 14px;
+}
+
+.brand-logo::after {
+    width: 18px;
+    height: 18px;
+    right: 10px;
+    bottom: 10px;
+}
+
+.brand-name {
+    font-size: 1.35rem;
+    letter-spacing: 0.03em;
+    margin-bottom: 6px;
+}
+
+.brand-tagline {
+    color: var(--brand-accent);
+    margin-top: 0;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav a {
+    color: var(--primary-deep);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--primary);
+}
+
+main {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 32px 20px 48px;
+}
+
+section {
+    background: #FFFFFF;
+    border: 1px solid rgba(133, 148, 135, 0.25);
+    border-radius: 22px;
+    box-shadow: 0 18px 32px rgba(52, 78, 65, 0.08);
+    padding: 28px;
+    margin-bottom: 24px;
+}
+
+h1,
+h2,
+h3 {
+    color: #111827;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: clamp(2rem, 2.4vw, 2.6rem);
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+}
+
+p,
+ul,
+ol {
+    line-height: 1.75;
+    margin: 0;
+}
+
+ul,
+ol {
+    padding-left: 1.4rem;
+}
+
+li {
+    margin-bottom: 0.9rem;
+}
+
+.button,
+a.button {
+    display: inline-block;
+    padding: 0.95rem 1.6rem;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.25s ease;
+    margin-right: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.button-primary {
+    background: var(--primary);
+    color: #FFFFFF;
+    border: none;
+}
+
+.button:hover,
+.button:focus {
+    transform: translateY(-1px);
+}
+
+.button-primary:hover,
+.button-primary:focus {
+    background: var(--primary-dark);
+}
+
+.button-row {
+    margin-top: 18px;
+}
+
+.stats-grid,
+.grade-grid,
+.tasks-grid {
+    display: grid;
+    gap: 18px;
+}
+
+.stats-grid {
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+    margin-top: 18px;
+}
+
+.grade-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    margin-top: 18px;
+}
+
+.tasks-grid {
+    grid-template-columns: 1fr;
+}
+
+.stat-card,
+.grade-card,
+.control-card,
+.task-card {
+    background: var(--card);
+    border-radius: 18px;
+    padding: 20px;
+}
+
+.control-card {
+    border: 1px solid rgba(88, 129, 87, 0.18);
+}
+
+.task-card {
+    border: 1px solid rgba(88, 129, 87, 0.18);
+}
+
+.task-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.task-course {
+    font-size: 0.95rem;
+    margin: 0 0 6px;
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.task-description {
+    margin-bottom: 20px;
+    color: var(--text);
+}
+
+.task-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.status-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.status-pendiente {
+    background: rgba(188, 108, 37, 0.12);
+    color: #8E4A0C;
+}
+
+.status-completada {
+    background: rgba(88, 129, 87, 0.18);
+    color: var(--primary-dark);
+}
+
+.button-secondary {
+    background: transparent;
+    color: var(--primary-deep);
+    border: 1px solid rgba(52, 78, 65, 0.2);
+}
+
+.button-secondary:hover,
+.button-secondary:focus {
+    background: rgba(88, 129, 87, 0.1);
+}
+
+.field-group {
+    display: grid;
+    gap: 10px;
+}
+
+.field-full {
+    grid-column: 1 / -1;
+}
+
+.form-grid {
+    display: grid;
+    gap: 18px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid rgba(88, 129, 87, 0.18);
+    border-radius: 14px;
+    font: inherit;
+    color: var(--text);
+    background: #FFFFFF;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid rgba(163, 177, 138, 0.35);
+    outline-offset: 2px;
+}
+
+.help-text {
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+.empty-state {
+    margin-top: 14px;
+    color: var(--muted);
+}
+
+.control-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer {
+    background: #3A5A40;
+    color: #F8F9F4;
+    text-align: center;
+    padding: 18px 20px;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 840px) {
+    .stats-grid,
+    .grade-grid,
+    .tasks-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .button-row {
+        display: grid;
+        gap: 10px;
+    }
+
+    a.button {
+        width: 100%;
+        margin-right: 0;
+        text-align: center;
+    }
+}
