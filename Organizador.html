@@ -21,6 +21,7 @@
                 <li><a href="tareas.html">Tareas</a></li>
                 <li><a href="Organizador.html">Organizador</a></li>
                 <li><a href="acerca.html">Acerca de</a></li>
+                <li><a href="misTareas.html">Mis tareas</a></li>
             </ul>
         </nav>
 
@@ -34,39 +35,100 @@
             <p>Gestiona tus entregas con opciones claras para agregar, quitar y planificar tus próximas asignaciones.</p>
         </section>
 
-         <section>
-            <h2>Agregar nueva tarea</h2>
-            <form id="task-form" class="form-grid">
-                <div class="field-group">
-                    <label for="task-title">Título de la tarea</label>
-                    <input id="task-title" type="text" placeholder="Título de la tarea" required>
-                </div>
-                <div class="field-group">
-                    <label for="task-course">Curso</label>
-                    <input id="task-course" type="text" placeholder="Nombre del curso" required>
-                </div>
-                <div class="field-group">
-                    <label for="task-date">Fecha de entrega</label>
-                    <input id="task-date" type="date" required>
-                </div>
-                <div class="field-group field-full">
-                    <label for="task-description">Descripción</label>
-                    <textarea id="task-description" rows="4" placeholder="Descripción breve"></textarea>
-                </div>
-                <button class="button button-primary button-agregar-tarea" type="submit">Agregar tarea</button>
-            </form>
-        </section>
+      <section>
+    <h2>Agregar nueva tarea</h2>
+
+    <section class="task-container">
+
+    <div class="form-section">
+
+        <h2>Agregar nueva tarea</h2>
+
+        <form id="task-form">
+
+            <div class="field-group">
+                <label for="task-title">Título de la tarea</label>
+                <input id="task-title" type="text" placeholder="Ejemplo: Proyecto web">
+                <small id="title-error"></small>
+            </div>
+
+
+            <div class="field-group">
+                <label for="task-course">Curso</label>
+                <input id="task-course" type="text" placeholder="Ejemplo: Programación Web">
+            </div>
+
+
+            <div class="field-group">
+                <label for="task-date">Fecha de entrega</label>
+                <input id="task-date" type="date">
+            </div>
+
+
+            <div class="field-group">
+                <label for="task-priority">Prioridad</label>
+
+                <select id="task-priority">
+                    <option value="">Seleccione</option>
+                    <option value="Alta">Alta</option>
+                    <option value="Media">Media</option>
+                    <option value="Baja">Baja</option>
+                </select>
+
+            </div>
+
+
+            <div class="field-group">
+                <label for="task-status">Estado</label>
+
+                <select id="task-status">
+                    <option value="">Seleccione</option>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="En progreso">En progreso</option>
+                    <option value="Completada">Completada</option>
+                </select>
+
+            </div>
+
+
+            <div class="field-group">
+                <label for="task-description">Descripción</label>
+
+                <textarea 
+                id="task-description"
+                placeholder="Descripción de la tarea"></textarea>
+
+            </div>
+
+
+            <button type="submit" class="button button-primary">
+                Guardar tarea
+            </button>
+
+
+            <p id="message"></p>
+
+
+        </form>
+
+    </div>
+
+
+
+</section>
+</section>
 
          <section>
             <h2>Enlaces rápidos</h2>
             <div class="button-row">
                 <a class="button button-primary button-eventos-tareas" href="tareas.html">Tareas</a>
-                <a class="button button-primary button-eventos-calificaciones" href="calificaciones.html">Calificaciones</a>
+                <a class="button button-primary button-eventos-ver-mis-tareas" href="misTareas.html">Mis tareas</a>
                 <a class="button button-primary button-eventos-contacto" href="contacto.html">Contacto</a>
             </div>
         </section>
 
-        </div>
+        </div>}
+
     </main>
 
     <footer>
