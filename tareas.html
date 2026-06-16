@@ -11,32 +11,28 @@
 <body>
     <header>
         <div class="container">
+
         <div class="brand-header">
-            <div class="brand-logo" aria-hidden="true"></div>
-            <div>
-                <p class="brand-name"><strong>La Esquinita</strong></p>
-                <p class="brand-tagline">Tu rincón para tareas universitarias</p>
-            </div>
+            <img src="asset/images/logo 2.0.png" alt="Logo La Esquinita" class="logo-img">
         </div>
+
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="tareas.html">Tareas</a></li>
-                <li><a href="calificaciones.html">Calificaciones</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="Organizador.html">Organizador</a></li>
                 <li><a href="acerca.html">Acerca de</a></li>
-                <li><a href="eventos.html">Organizador</a></li>
             </ul>
         </nav>
-        </div>
+
+    </div>
     </header>
 
     <main>
         <div class="container">
         <section>
             <h1>Bienvenido a tu rincón de estudio</h1>
-            <p>Este es el diseño inicial de la interfaz para organizar tareas universitarias.</p>
-            <p>Pronto podrás buscar, filtrar y controlar tus pendientes en este espacio.</p>
+
             <div class="stats-grid">
                 <div class="stat-card">
                     <p>Total de tareas</p>
@@ -82,28 +78,7 @@
             <p id="empty-state" class="empty-state">No hay tareas para mostrar. Agrega una tarea nueva o ajusta tus filtros.</p>
         </section>
 
-        <section>
-            <h2>Agregar nueva tarea</h2>
-            <form id="task-form" class="form-grid">
-                <div class="field-group">
-                    <label for="task-title">Título de la tarea</label>
-                    <input id="task-title" type="text" placeholder="Título de la tarea" required>
-                </div>
-                <div class="field-group">
-                    <label for="task-course">Curso</label>
-                    <input id="task-course" type="text" placeholder="Nombre del curso" required>
-                </div>
-                <div class="field-group">
-                    <label for="task-date">Fecha de entrega</label>
-                    <input id="task-date" type="date" required>
-                </div>
-                <div class="field-group field-full">
-                    <label for="task-description">Descripción</label>
-                    <textarea id="task-description" rows="4" placeholder="Descripción breve"></textarea>
-                </div>
-                <button class="button button-primary button-agregar-tarea" type="submit">Agregar tarea</button>
-            </form>
-        </section>
+       
         </div>
     </main>
 

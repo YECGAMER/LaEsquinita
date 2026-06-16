@@ -5,6 +5,7 @@
     font-size: 16px;
     background-color: #F8F9F4;
     color: #344E41;
+
     --bg: #F8F9F4;
     --primary: #A3B18A;
     --primary-dark: #588157;
@@ -38,6 +39,12 @@ header {
     border-bottom: 1px solid rgba(86, 112, 80, 0.18);
 }
 
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 main {
     padding: 32px 0 48px;
 }
@@ -46,55 +53,16 @@ header p {
     margin: 0;
 }
 
+/* Logo */
 .brand-header {
     display: flex;
     align-items: center;
-    gap: 16px;
-    justify-content: space-between;
-    flex-wrap: wrap;
 }
 
-.brand-logo {
-    width: 70px;
-    height: 70px;
-    border-radius: 22px;
-    background: linear-gradient(180deg, var(--brand-base), #3f5f46);
-    box-shadow: inset 0 0 0 3px rgba(255,255,255,0.35);
-    position: relative;
-    flex-shrink: 0;
-}
-
-.brand-logo::before,
-.brand-logo::after {
-    content: "";
-    position: absolute;
-    border-radius: 999px;
-    background: var(--brand-warm);
-}
-
-.brand-logo::before {
-    width: 36px;
-    height: 36px;
-    left: 12px;
-    top: 14px;
-}
-
-.brand-logo::after {
-    width: 18px;
-    height: 18px;
-    right: 10px;
-    bottom: 10px;
-}
-
-.brand-name {
-    font-size: 1.35rem;
-    letter-spacing: 0.03em;
-    margin-bottom: 6px;
-}
-
-.brand-tagline {
-    color: var(--brand-accent);
-    margin-top: 0;
+.logo-img {
+    width: 340px;
+    height: auto;
+    display: block;
 }
 
 nav ul {
@@ -369,8 +337,19 @@ footer {
 }
 
 @media (max-width: 640px) {
+
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo-img {
+        width: 180px;
+    }
+
     nav ul {
         flex-direction: column;
+        text-align: center;
     }
 
     .button-row {
