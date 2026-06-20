@@ -44,15 +44,7 @@
                 <div class="container">
 
                     <div class="section-heading">
-
-                        <span class="section-badge">Nueva tarea</span>
-
                         <h2>Agregar nueva tarea</h2>
-
-                        <p>
-                            Registra tus pendientes universitarios y mantenlos organizados.
-                        </p>
-
                     </div>
 
                     <div class="registration-layout">
@@ -77,6 +69,23 @@
 
 
                                 <input type="text" id="cursoTarea" placeholder="Ejemplo: Programación">
+
+                            </div>
+                            <div class="form-group">
+
+                                <label for="categoriaTarea">
+                                    Categoría
+                                </label>
+
+                                <select id="categoriaTarea">
+
+                                    <option>Investigación</option>
+                                    <option>Proyecto</option>
+                                    <option>Laboratorio</option>
+                                    <option>Examen</option>
+                                    <option>Documentación</option>
+
+                                </select>
 
                             </div>
                             <div class="field-group">
@@ -105,6 +114,20 @@
                                     </option>
 
                                 </select>
+                            </div>
+                            <div class="form-group">
+
+                                <label for="estadoTarea">
+                                    Estado
+                                </label>
+
+                                <select id="estadoTarea">
+
+                                    <option>Pendiente</option>
+                                    <option>En progreso</option>
+                                    <option>Completada</option>
+
+                                </select>
 
                             </div>
                             <div class="form-group">
@@ -123,6 +146,11 @@
                             <button type="button" id="btnGuardarTarea">
 
                                 Guardar tarea
+
+                            </button>
+                            <button type="button" id="btnLimpiarFormulario">
+
+                                Limpiar formulario
 
                             </button>
 
@@ -166,6 +194,7 @@
         <p>Contacto: info@laesquinita.cr</p>
         <p>© 2026 La Esquinita</p>
     </footer>
+    <script src="Organizador.html"></script>
 </body>
 
 </html>

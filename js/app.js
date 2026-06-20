@@ -228,3 +228,115 @@ btnGuardarTarea.addEventListener("click", guardarTarea);
 //---------------------------------------------------------------------------------
 //------------------------------Mis tareas-----------------------------------------
 //---------------------------------------------------------------------------------
+
+// --- Elementos del DOM ---
+const listaMisTareas = document.getElementById("listaMisTareas");
+const mensajeMisTareas = document.getElementById("mensajeMisTareas");
+const buscadorMisTareas = document.getElementById("buscarMisTareas");
+const filtroEstadoMisTareas = document.getElementById("estadoMisTareas");
+const btnLimpiarMisTareas = document.getElementById("limpiarMisTareas");
+
+// --- Funciones de Datos (LocalStorage) ---
+function obtenerMisTareas() {
+    return JSON.parse(localStorage.getItem("tareas")) || [];
+}
+
+function guardarMisTareas(tareas) {
+    localStorage.setItem("tareas", JSON.stringify(tareas));
+}
+
+// --- Renderizado de UI ---
+function crearTarjeta(tarea) {
+    const tarjeta = document.createElement("article");
+    tarjeta.classList.add("task-card");
+
+    tarjeta.innerHTML = `
+        <div class="task-top">
+            <span class="task-course">${tarea.curso}</span>
+            <span class="status-chip">${tarea.estado}</span>
+        </div>
+        <h3>${tarea.nombre}</h3>
+        <p class="task-description">${tarea.descripcion}</p>
+        <p>Fecha: <strong>${tarea.fechaEntrega}</strong></p>
+        <p>Prioridad: <strong>${tarea.prioridad}</strong></p>
+        <button class="button button-secondary btn-eliminar">Eliminar</button>
+    `;
+
+    // Asignar el evento eliminar de forma segura mediante JS (evita problemas de scope)
+    const btnEliminar = tarjeta.querySelector(".btn-eliminar");
+    btnEliminar.addEventListener("click", () => eliminarTarea(tarea.id));
+
+    return tarjeta;
+}
+
+function mostrarMisTareas(lista) {
+    if (!listaMisTareas) return; // Validación por si no estás en la página de la lista
+    
+    listaMisTareas.innerHTML = "";
+
+    if (lista.length === 0) {
+        if (mensajeMisTareas) mensajeMisTareas.textContent = "No se encontraron tareas.";
+        return;
+    }
+
+    if (mensajeMisTareas) {
+        mensajeMisTareas.textContent = `Mostrando ${lista.length} tarea(s).`;
+    }
+
+    lista.forEach(tarea => {
+        const tarjeta = crearTarjeta(tarea);
+        listaMisTareas.appendChild(tarjeta);
+    });
+}
+
+// --- Lógica de Filtros y Acciones ---
+function filtrarMisTareas() {
+    // Validamos que existan los filtros antes de leer sus valores
+    const texto = buscadorMisTareas ? buscadorMisTareas.value.toLowerCase() : "";
+    const estado = filtroEstadoMisTareas ? filtroEstadoMisTareas.value : "todos";
+
+    const tareas = obtenerMisTareas();
+
+    const resultado = tareas.filter(tarea => {
+        const cumpleTexto = tarea.nombre.toLowerCase().includes(texto) || 
+                             tarea.curso.toLowerCase().includes(texto);
+        const cumpleEstado = estado === "todos" || tarea.estado === estado;
+
+        return cumpleTexto && cumpleEstado;
+    });
+
+    mostrarMisTareas(resultado);
+}
+
+function eliminarTarea(id) {
+    let tareas = obtenerMisTareas();
+    tareas = tareas.filter(tarea => tarea.id !== id);
+    
+    guardarMisTareas(tareas);
+    
+    // Recarga la lista actual aplicando los filtros que ya estén puestos
+    filtrarMisTareas(); 
+}
+
+function limpiarFiltros() {
+    if (buscadorMisTareas) buscadorMisTareas.value = "";
+    if (filtroEstadoMisTareas) filtroEstadoMisTareas.value = "todos";
+    mostrarMisTareas(obtenerMisTareas());
+}
+
+// --- Inicialización de Eventos ---
+document.addEventListener("DOMContentLoaded", () => {
+    // Inicializar la vista
+    mostrarMisTareas(obtenerMisTareas());
+
+    // Escuchar eventos SOLO si los elementos existen en el HTML actual
+    if (buscadorMisTareas) {
+        buscadorMisTareas.addEventListener("input", filtrarMisTareas);
+    }
+    if (filtroEstadoMisTareas) {
+        filtroEstadoMisTareas.addEventListener("change", filtrarMisTareas);
+    }
+    if (btnLimpiarMisTareas) {
+        btnLimpiarMisTareas.addEventListener("click", limpiarFiltros);
+    }
+});
