@@ -1,10 +1,18 @@
-/* Estilos generales para La Esquinita */
+/* =====================================================
+   LA ESQUINITA - ESTILOS GENERALES
+   Contiene colores, tipografía y configuración base
+===================================================== */
+
+
 :root {
+
     color-scheme: light;
+
     font-family: 'Poppins', sans-serif;
+
     font-size: 16px;
-    background-color: #F8F9F4;
-    color: #344E41;
+
+    /* Colores principales del proyecto */
 
     --bg: #F8F9F4;
     --primary: #A3B18A;
@@ -12,354 +20,1172 @@
     --primary-deep: #3A5A40;
     --card: #DAD7CD;
     --accent: #BC6C25;
+
     --text: #344E41;
     --muted: #6D7A66;
+
 }
+
+
+
+
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
+
 
 * {
+
     box-sizing: border-box;
+
 }
+
+
 
 body {
+
     margin: 0;
+
     padding: 0;
+
     background: var(--bg);
+
     color: var(--text);
+
 }
+
+
 
 .container {
-    width: min(1024px, 90%);
+
+    width: min(1024px,90%);
+
     margin: 0 auto;
+
 }
+
+
+
+
+
+/* =====================================================
+   ENCABEZADO Y MENÚ PRINCIPAL
+===================================================== */
+
 
 header {
+
     background: #FFFFFF;
+
     color: var(--primary-deep);
-    padding: 18px 0;
-    border-bottom: 1px solid rgba(86, 112, 80, 0.18);
+
+    padding:18px 0;
+
+    border-bottom:
+    1px solid rgba(86,112,80,0.18);
+
 }
+
+
 
 header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
 }
 
-main {
-    padding: 32px 0 48px;
-}
 
-header p {
-    margin: 0;
-}
 
 /* Logo */
+
 .brand-header {
-    display: flex;
-    align-items: center;
+
+    display:flex;
+
+    align-items:center;
+
 }
+
+
 
 .logo-img {
-    width: 340px;
-    height: auto;
-    display: block;
+
+    width:340px;
+
+    height:auto;
+
+    display:block;
+
 }
+
+
+
+
+/* Navegación */
 
 nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    padding:0;
+
+    margin:0;
+
+    list-style:none;
+
 }
 
+
+
 nav a {
-    color: var(--primary-deep);
-    text-decoration: none;
-    font-weight: 600;
+
+    color:var(--primary-deep);
+
+    text-decoration:none;
+
+    font-weight:600;
+
 }
+
+
 
 nav a:hover,
 nav a:focus {
-    color: var(--primary);
+
+    color:var(--primary);
+
 }
+
+
+
+
+
+/* =====================================================
+   CONTENIDO PRINCIPAL
+===================================================== */
+
 
 main {
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 32px 20px 48px;
+
+    max-width:1024px;
+
+    margin:0 auto;
+
+    padding:32px 20px 48px;
+
 }
 
+
+
+
+/* Cada sección del sitio */
+
 section {
-    background: #FFFFFF;
-    border: 1px solid rgba(133, 148, 135, 0.25);
-    border-radius: 22px;
-    box-shadow: 0 18px 32px rgba(52, 78, 65, 0.08);
-    padding: 28px;
-    margin-bottom: 24px;
+
+    background:#FFFFFF;
+
+    border:1px solid rgba(133,148,135,0.25);
+
+    border-radius:22px;
+
+    box-shadow:
+    0 18px 32px rgba(52,78,65,0.08);
+
+    padding:28px;
+
+    margin-bottom:24px;
+
 }
+
+
+
+
+
+/* Títulos */
 
 h1,
 h2,
 h3 {
-    color: #111827;
-    margin-top: 0;
+
+    color:#111827;
+
+    margin-top:0;
+
 }
+
+
 
 h1 {
-    font-size: clamp(2rem, 2.4vw, 2.6rem);
-    margin-bottom: 12px;
+
+    font-size:
+    clamp(2rem,2.4vw,2.6rem);
+
+    margin-bottom:12px;
+
 }
+
+
 
 h2 {
-    font-size: 1.4rem;
-    margin-bottom: 14px;
+
+    font-size:1.4rem;
+
+    margin-bottom:14px;
+
 }
 
-p,
-ul,
-ol {
-    line-height: 1.75;
-    margin: 0;
+
+
+p {
+
+    line-height:1.75;
+
+    margin:0;
+
 }
 
-ul,
-ol {
-    padding-left: 1.4rem;
-}
 
-li {
-    margin-bottom: 0.9rem;
-}
+
+
+
+/* =====================================================
+   BOTONES GENERALES
+===================================================== */
+
 
 .button,
 a.button {
-    display: inline-block;
-    padding: 0.95rem 1.6rem;
-    border-radius: 999px;
-    text-decoration: none;
-    transition: transform 0.2s ease, background 0.25s ease;
-    margin-right: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
+
+
+    display:inline-block;
+
+    padding:
+    0.95rem 1.6rem;
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:
+    transform .2s ease,
+    background .25s ease;
+
 }
+
+
 
 .button-primary {
-    background: var(--primary);
-    color: #FFFFFF;
-    border: none;
+
+    background:var(--primary);
+
+    color:white;
+
+    border:none;
+
 }
 
-.button:hover,
-.button:focus {
-    transform: translateY(-1px);
+
+
+.button-primary:hover {
+
+    background:var(--primary-dark);
+
 }
 
-.button-primary:hover,
-.button-primary:focus {
-    background: var(--primary-dark);
-}
 
-.button-row {
-    margin-top: 18px;
-}
 
-.stats-grid,
-.grade-grid,
-.tasks-grid {
-    display: grid;
-    gap: 18px;
-}
+
+
+/* =====================================================
+   TARJETAS DE ESTADÍSTICAS
+   Usadas en Inicio y Mis tareas
+===================================================== */
+
 
 .stats-grid {
-    grid-template-columns: repeat(3, minmax(160px, 1fr));
-    margin-top: 18px;
+
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,minmax(160px,1fr));
+
+    gap:18px;
+
+    margin-top:18px;
+
+
 }
 
-.grade-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    margin-top: 18px;
+
+
+.stat-card {
+
+
+    background:var(--card);
+
+    border-radius:18px;
+
+    padding:20px;
+
+
 }
+
+
+
+
+
+/* =====================================================
+   TARJETAS DE TAREAS
+===================================================== */
+
 
 .tasks-grid {
-    grid-template-columns: 1fr;
+
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:18px;
+
+
 }
 
-.stat-card,
-.grade-card,
-.control-card,
-.task-card {
-    background: var(--card);
-    border-radius: 18px;
-    padding: 20px;
-}
 
-.control-card {
-    border: 1px solid rgba(88, 129, 87, 0.18);
-}
 
 .task-card {
-    border: 1px solid rgba(88, 129, 87, 0.18);
+
+
+    background:var(--card);
+
+    border-radius:18px;
+
+    padding:20px;
+
+    border:
+    1px solid rgba(88,129,87,0.18);
+
+
 }
+
+
 
 .task-top {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 16px;
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+
+    align-items:center;
+
 }
+
+
 
 .task-course {
-    font-size: 0.95rem;
-    margin: 0 0 6px;
-    color: var(--primary-dark);
-    font-weight: 600;
+
+
+    color:var(--primary-dark);
+
+    font-weight:600;
+
 }
+
+
 
 .task-description {
-    margin-bottom: 20px;
-    color: var(--text);
+
+
+    margin-bottom:20px;
+
 }
+
+
 
 .task-meta {
-    display: flex;
-    justify-content: space-between;
-    gap: 14px;
-    flex-wrap: wrap;
-    align-items: center;
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+
 }
 
-.task-actions {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
+
+
+
+
+/* =====================================================
+   ESTADOS DE LAS TAREAS
+===================================================== */
+
 
 .status-chip {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 12px;
-    border-radius: 999px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+
+
+    display:inline-flex;
+
+    padding:8px 12px;
+
+    border-radius:999px;
+
+    font-size:.85rem;
+
+    font-weight:700;
+
 }
+
+
 
 .status-pendiente {
-    background: rgba(188, 108, 37, 0.12);
-    color: #8E4A0C;
+
+
+    background:
+    rgba(188,108,37,.12);
+
+    color:#8E4A0C;
+
+
 }
+
+
 
 .status-completada {
-    background: rgba(88, 129, 87, 0.18);
-    color: var(--primary-dark);
+
+
+    background:
+    rgba(88,129,87,.18);
+
+    color:var(--primary-dark);
+
+
 }
 
-.button-secondary {
-    background: transparent;
-    color: var(--primary-deep);
-    border: 1px solid rgba(52, 78, 65, 0.2);
+
+/* =====================================================
+   FORMULARIO DEL ORGANIZADOR
+   Divide pantalla en:
+   formulario | vista previa
+===================================================== */
+
+
+.task-layout {
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:24px;
+
+    align-items:start;
+
 }
 
-.button-secondary:hover,
-.button-secondary:focus {
-    background: rgba(88, 129, 87, 0.1);
+
+
+
+
+/* Contenedor del formulario */
+
+.task-form {
+
+    background:#FFFFFF;
+
+    border-radius:22px;
+
+    padding:28px;
+
+    border:
+    1px solid rgba(133,148,135,0.25);
+
+    box-shadow:
+    0 18px 32px rgba(52,78,65,0.08);
+
 }
 
-.field-group {
-    display: grid;
-    gap: 10px;
+
+
+
+
+/* Espacio entre campos */
+
+.task-form .form-group {
+
+    display:grid;
+
+    gap:10px;
+
+    margin-bottom:18px;
+
 }
 
-.field-full {
-    grid-column: 1 / -1;
+
+
+
+/* Nombre de los campos */
+
+.task-form label {
+
+    font-weight:600;
+
+    color:var(--primary-deep);
+
 }
 
-.form-grid {
-    display: grid;
-    gap: 18px;
-}
+
+
+
+/* Inputs, select y textarea */
 
 input,
 select,
 textarea {
-    width: 100%;
-    padding: 14px 16px;
-    border: 1px solid rgba(88, 129, 87, 0.18);
-    border-radius: 14px;
-    font: inherit;
-    color: var(--text);
-    background: #FFFFFF;
+
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:
+
+    1px solid rgba(88,129,87,0.18);
+
+    border-radius:14px;
+
+    font:inherit;
+
+    color:var(--text);
+
+    background:#FFFFFF;
+
+
 }
+
+
+
+textarea {
+
+    min-height:120px;
+
+    resize:vertical;
+
+}
+
+
 
 input:focus,
 select:focus,
 textarea:focus {
-    outline: 2px solid rgba(163, 177, 138, 0.35);
-    outline-offset: 2px;
+
+
+    outline:
+
+    2px solid rgba(163,177,138,.35);
+
 }
 
-.help-text {
-    color: var(--muted);
-    margin-bottom: 12px;
+
+
+
+
+/* =====================================================
+   BOTÓN AGREGAR TAREA
+===================================================== */
+
+
+#btnAgregarTarea {
+
+
+    background:var(--primary);
+
+    color:white;
+
+    border:none;
+
+    padding:14px 24px;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
 }
+
+
+
+#btnAgregarTarea:hover {
+
+
+    background:var(--primary-dark);
+
+    transform:translateY(-2px);
+
+
+}
+
+
+
+
+/* =====================================================
+   VISTA PREVIA
+   Muestra la información antes de guardar
+===================================================== */
+
+
+.task-preview {
+
+
+    background:var(--card);
+
+    border-radius:22px;
+
+    padding:28px;
+
+    border:
+
+    1px solid rgba(88,129,87,.18);
+
+
+    min-height:350px;
+
+
+}
+
+
+
+.task-preview h3 {
+
+
+    color:var(--primary-deep);
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+.task-preview p {
+
+
+    margin-bottom:12px;
+
+
+}
+
+
+
+
+
+/* =====================================================
+   FILTROS DE MIS TAREAS
+   Los coloca de forma horizontal
+
+===================================================== */
+
+
+.filters-horizontal {
+
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    align-items:center;
+
+
+}
+
+
+
+.filters-horizontal select,
+.filters-horizontal input {
+
+
+    flex:1;
+
+    min-width:180px;
+
+
+}
+
+
+
+
+
+/* =====================================================
+   DISTRIBUCIÓN MIS TAREAS + CALENDARIO
+   Izquierda: tareas
+   Derecha: calendario
+===================================================== */
+
+
+.tasks-calendar-layout {
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    2fr 1fr;
+
+
+    gap:25px;
+
+
+}
+
+
+
+
+
+
+/* =====================================================
+   CALENDARIO
+===================================================== */
+
+
+.calendar {
+
+
+    background:var(--card);
+
+    padding:20px;
+
+    border-radius:18px;
+
+}
+
+
+
+/* Encabezado del calendario */
+
+.calendar h3 {
+
+
+    color:var(--primary-deep);
+
+    text-align:center;
+
+
+}
+
+
+
+/* Cuadrícula de días */
+
+
+.calendar-grid {
+
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(7,1fr);
+
+    gap:8px;
+
+
+}
+
+
+
+.calendar-day {
+
+
+    background:white;
+
+    padding:10px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+/* Punto que indica una tarea */
+
+.calendar-point {
+
+
+    width:8px;
+
+    height:8px;
+
+    background:var(--accent);
+
+    border-radius:50%;
+
+    display:inline-block;
+
+
+}
+
+
+
+
+
+/* =====================================================
+   TARJETAS GENERADAS DESDE JAVASCRIPT
+===================================================== */
+
+
+.user-task-card {
+
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    border:
+
+    1px solid rgba(88,129,87,.18);
+
+
+    margin-bottom:18px;
+
+
+}
+
+
+
+.user-task-card h3 {
+
+
+    color:var(--primary-deep);
+
+
+}
+
+
+
+
+/* Información de la tarea */
+
+
+.task-info {
+
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+
+/* =====================================================
+   BOTONES DENTRO DE LAS TAREAS
+===================================================== */
+
+
+.task-buttons {
+
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+
+}
+
+
+
+.complete-button {
+
+
+    background:var(--primary);
+
+    color:white;
+
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+
+}
+
+
+
+.complete-button:hover {
+
+
+    background:var(--primary-dark);
+
+
+}
+
+
+
+.delete-button {
+
+
+    background:var(--accent);
+
+    color:white;
+
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+/* =====================================================
+   MENSAJE CUANDO NO EXISTEN TAREAS
+===================================================== */
+
 
 .empty-state {
-    margin-top: 14px;
-    color: var(--muted);
+
+
+    margin-top:14px;
+
+    color:var(--muted);
+
+
 }
 
-.control-actions {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+
+
+
+
+/* =====================================================
+   PIE DE PÁGINA
+===================================================== */
+
 
 footer {
-    background: #3A5A40;
-    color: #F8F9F4;
-    text-align: center;
-    padding: 18px 20px;
-    font-size: 0.95rem;
+
+
+    background:#3A5A40;
+
+    color:#F8F9F4;
+
+    text-align:center;
+
+    padding:18px 20px;
+
+    font-size:.95rem;
+
+
 }
 
-@media (max-width: 840px) {
-    .stats-grid,
-    .grade-grid,
-    .tasks-grid {
-        grid-template-columns: 1fr;
+
+
+
+
+/* =====================================================
+   DISEÑO RESPONSIVO
+   Para celulares y tablets
+===================================================== */
+
+
+@media(max-width:840px){
+
+
+    .stats-grid {
+
+
+        grid-template-columns:1fr;
+
+
     }
+
+
+    .task-layout {
+
+
+        grid-template-columns:1fr;
+
+
+    }
+
+
+    .tasks-calendar-layout {
+
+
+        grid-template-columns:1fr;
+
+
+    }
+
+
 }
 
-@media (max-width: 640px) {
+
+
+
+
+@media(max-width:640px){
+
 
     header .container {
-        flex-direction: column;
-        gap: 15px;
+
+
+        flex-direction:column;
+
+        gap:15px;
+
+
     }
+
+
 
     .logo-img {
-        width: 180px;
+
+
+        width:180px;
+
+
     }
+
+
 
     nav ul {
-        flex-direction: column;
-        text-align: center;
+
+
+        flex-direction:column;
+
+        text-align:center;
+
+
     }
 
-    .button-row {
-        display: grid;
-        gap: 10px;
+
+
+    .filters-horizontal {
+
+
+        flex-direction:column;
+
+
     }
 
-    a.button {
-        width: 100%;
-        margin-right: 0;
-        text-align: center;
+
+
+    .filters-horizontal select,
+    .filters-horizontal input {
+
+
+        width:100%;
+
+
     }
+
+
+}
+/* ===============================
+   BOTONES GENERALES DEL SISTEMA
+================================ */
+
+
+.button,
+button,
+a.button {
+
+
+    display:inline-block;
+
+    padding:0.95rem 1.6rem;
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:
+    transform .2s ease,
+    background .25s ease;
+
+
+}
+
+
+/* Botón principal */
+
+.button-primary,
+#btnAgregarTarea {
+
+
+    background:var(--primary);
+
+    color:white;
+
+    border:none;
+
+
+}
+
+
+.button-primary:hover,
+#btnAgregarTarea:hover {
+
+
+    background:var(--primary-dark);
+
+    transform:translateY(-2px);
+
+
+}
+/* Botón secundario */
+.button-secondary {
+    background: transparent;
+    color: var(--primary-deep);
+    border: 2px solid var(--primary);
+}
+
+.button-secondary:hover {
+    background: rgba(163, 177, 138, 0.15);
+    color: var(--primary-dark);
+    transform: translateY(-2px);
 }

@@ -1,167 +1,91 @@
-const nombreTarea = document.getElementById("nombreTarea");
-const cursoTarea = document.getElementById("cursoTarea");
-const fechaEntrega = document.getElementById("task-date");
-const categoriaTarea = document.getElementById("categoriaTarea");
-const prioridad = document.getElementById("prioridad");
-const estadoTarea = document.getElementById("estadoTarea");
-const descripcionTarea = document.getElementById("descripcionTarea");
-const btnGuardarTarea = document.getElementById("btnGuardarTarea");
-const btnLimpiarFormulario = document.getElementById("btnLimpiarFormulario");
+document.addEventListener("DOMContentLoaded", function () {
+    // Cargar la lista inicial desde localStorage o crear un arreglo vacío si no existe
+    let listaTareas = JSON.parse(localStorage.getItem("tareas")) || []
 
-const detalleTarea = document.getElementById("detalleTarea");
-const resumenTarea = document.getElementById("resumenTarea");
+    // Obtener elementos del formulario
+    const nombreTarea = document.getElementById("nombreTarea")
+    const curso = document.getElementById("curso")
+    const categoria = document.getElementById("categoria")
+    const fechaEntrega = document.getElementById("fechaEntrega")
+    const prioridad = document.getElementById("prioridad")
+    const estado = document.getElementById("estado")
+    const descripcion = document.getElementById("descripcion")
 
-// VISTA PREVIA DE LA TAREA
+    // Elementos de salida
+    const vistaPrevia = document.getElementById("vistaPreviaTarea")
+    const btnAgregarTarea = document.getElementById("btnAgregarTarea")
 
-function mostrarVistaPrevia() {
-    detalleTarea.innerHTML = `
-    <div class="detail-content">
-        <h3>
-        ${nombreTarea.value || "Nueva tarea"}
-        </h3>
-        <p>
-        Curso:
-        ${cursoTarea.value || "Sin especificar"}
-        </p>
+    // Función para mostrar la vista previa reactiva en tiempo real
+    function mostrarVistaPrevia() {
+        // Validación visual inicial por si todo está completamente en blanco
+        if (!nombreTarea.value && !curso.value && !categoria.value && !fechaEntrega.value && !descripcion.value) {
+            vistaPrevia.innerHTML = `
+                <h3>Vista previa</h3>
+                <p>Complete el formulario para visualizar la tarea.</p>
+            `
+            return
+        }
 
-        <p>
-        Fecha:
-        ${fechaEntrega.value || "Sin fecha"}
-        </p>
-
-        <p>
-        Categoría:
-        ${categoriaTarea.value || "Sin categoría"}
-        </p>
-
-        <p>
-        Prioridad:
-        ${prioridad.value}
-        </p>
-
-        <p>
-        Estado:
-        ${estadoTarea.value}
-        </p>
-
-        <p>
-        Descripción:
-        ${descripcionTarea.value || "Sin descripción"}
-        </p>
-    </div>
-    `;
-}
-
-// VALIDAR FORMULARIO
-function validarFormulario() {
-    if (nombreTarea.value === "" ||
-        cursoTarea.value === "" ||
-        fechaEntrega.value === "" ||
-        descripcionTarea.value === "") {
-        resumenTarea.innerHTML = `
-        ⚠ Complete todos los campos obligatorios antes de guardar.
-        `;
-        return false;
+        vistaPrevia.innerHTML = `
+            <h3>Vista previa</h3>
+            <p><strong>Nombre:</strong> ${nombreTarea.value || "---"}</p>
+            <p><strong>Curso:</strong> ${curso.value || "---"}</p>
+            <p><strong>Categoría:</strong> ${categoria.value || "---"}</p>
+            <p><strong>Fecha de entrega:</strong> ${fechaEntrega.value || "---"}</p>
+            <p><strong>Prioridad:</strong> ${prioridad.value || "---"}</p>
+            <p><strong>Estado:</strong> ${estado.value || "---"}</p>
+            <p><strong>Descripción:</strong> ${descripcion.value || "---"}</p>
+        `
     }
-    return true;
-}
 
-// GUARDAR TAREA
-function guardarTarea() {
-    if (!validarFormulario()) {
-        return;
+    // Escuchar cambios en todos los campos interactivos del formulario
+    const campos = document.querySelectorAll("#formOrganizador input, #formOrganizador select, #formOrganizador textarea")
+    
+    campos.forEach(function (campo) {
+        campo.addEventListener("input", mostrarVistaPrevia)
+        campo.addEventListener("change", mostrarVistaPrevia)
+    })
+
+    // Guardar la tarea de forma persistente
+    btnAgregarTarea.addEventListener("click", function () {
+        // Validación de datos básica antes de almacenar
+        if (!nombreTarea.value || !curso.value || !fechaEntrega.value) {
+            alert("Por favor completa los campos principales (Nombre, Curso y Fecha)")
+            return
+        }
+
+        const nuevaTarea = {
+            id: Date.now(),
+            nombre: nombreTarea.value,
+            curso: curso.value,
+            categoria: categoria.value || "General",
+            fechaEntrega: fechaEntrega.value,
+            prioridad: prioridad.value,
+            estado: estado.value,
+            descripcion: descripcion.value || "Sin descripción"
+        }
+
+        // Empujar el nuevo objeto al almacenamiento local cargado
+        listaTareas.push(nuevaTarea)
+        localStorage.setItem("tareas", JSON.stringify(listaTareas))
+
+        alert("Tarea agregada correctamente")
+        limpiarFormulario()
+    })
+
+    // Limpiar campos y refrescar el estado visual de la tarjeta
+    function limpiarFormulario() {
+        nombreTarea.value = ""
+        curso.value = ""
+        categoria.value = ""
+        fechaEntrega.value = ""
+        prioridad.value = "Alta"
+        estado.value = "Pendiente"
+        descripcion.value = ""
+
+        mostrarVistaPrevia()
     }
-    let tareasGuardadas =
-        JSON.parse(localStorage.getItem("tareas")) || [];
 
-    const nuevaTarea = {
-        id: Date.now(),
-        nombre: nombreTarea.value,
-        curso: cursoTarea.value,
-        categoria: categoriaTarea.value,
-        descripcion: descripcionTarea.value,
-        fechaEntrega: fechaEntrega.value,
-        prioridad: prioridad.value,
-        estado: estadoTarea.value
-    };
-
-    tareasGuardadas.push(nuevaTarea);
-    localStorage.setItem(
-        "tareas",
-        JSON.stringify(tareasGuardadas)
-    );
-
-    resumenTarea.innerHTML = `
-    ✓ Tarea guardada correctamente.
-    `;
-
-    limpiarFormulario();
-}
-
-// LIMPIAR FORMULARIO
-function limpiarFormulario() {
-    nombreTarea.value = "";
-    cursoTarea.value = "";
-    fechaEntrega.value = "";
-    categoriaTarea.value = "";
-    prioridad.value = "Alta";
-    estadoTarea.value = "Pendiente";
-    descripcionTarea.value = "";
-    detalleTarea.innerHTML = `
-    <div class="detail-empty">
-        <h3>
-        Vista previa
-        </h3>
-        <p>
-        Aquí aparecerá la información de la tarea.
-        </p>
-    </div>
-    `;
-}
-
-// EVENTOS PARA ACTUALIZAR VISTA PREVIA
-nombreTarea.addEventListener(
-    "input",
-    mostrarVistaPrevia
-);
-
-cursoTarea.addEventListener(
-    "input",
-    mostrarVistaPrevia
-);
-
-fechaEntrega.addEventListener(
-    "change",
-    mostrarVistaPrevia
-);
-
-categoriaTarea.addEventListener(
-    "change",
-    mostrarVistaPrevia
-);
-
-prioridad.addEventListener(
-    "change",
-    mostrarVistaPrevia
-);
-
-estadoTarea.addEventListener(
-    "change",
-    mostrarVistaPrevia
-);
-
-descripcionTarea.addEventListener(
-    "input",
-    mostrarVistaPrevia
-);
-
-// BOTONES
-btnGuardarTarea.addEventListener(
-    "click",
-    guardarTarea
-);
-
-btnLimpiarFormulario.addEventListener(
-    "click",
-    limpiarFormulario
-);
+    // Dibujar el estado inicial
+    mostrarVistaPrevia()
+})

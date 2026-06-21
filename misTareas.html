@@ -11,59 +11,78 @@
 <body>
     <header>
         <div class="container">
-
-        <div class="brand-header">
-            <img src="asset/images/logo 2.0.png" alt="Logo La Esquinita" class="logo-img">
+            <div class="brand-header">
+                <img src="asset/images/logo 2.0.png" alt="Logo La Esquinita" class="logo-img">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tareas.html">Tareas</a></li>
+                    <li><a href="Organizador.html">Organizador</a></li>
+                    <li><a href="misTareas.html" class="active">Mis tareas</a></li>
+                </ul>
+            </nav>
         </div>
-
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="tareas.html">Tareas</a></li>
-                <li><a href="Organizador.html">Organizador</a></li>
-                <li><a href="acerca.html">Acerca de</a></li>
-                <li><a href="misTareas.html">Mis tareas</a></li>
-            </ul>
-        </nav>
-
-    </div>
     </header>
 
     <main>
         <div class="container">
-        <section>
-            <h1>Bienvenido a tu rincón de estudio</h1>
+            <section>
+                <h1>Mis tareas</h1>
+                <p>Organiza tus actividades, cambia estados y controla tus entregas.</p>
 
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <p>Total de tareas</p>
-                    <strong>--</strong>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <p>Total de tareas</p>
+                        <strong id="totalTareas">0</strong>
+                    </div>
+                    <div class="stat-card">
+                        <p>Completadas</p>
+                        <strong id="tareasCompletadas">0</strong>
+                    </div>
+                    <div class="stat-card">
+                        <p>Pendientes</p>
+                        <strong id="tareasPendientes">0</strong>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <p>Completadas</p>
-                    <strong>--</strong>
+            </section>
+
+            <section>
+                <h2>Filtros</h2>
+                <div class="filters-horizontal">
+                    <select id="filtroCurso">
+                        <option value="">Todos los cursos</option>
+                    </select>
+
+                    <select id="filtroCategoria">
+                        <option value="">Todas las categorías</option>
+                    </select>
+
+                    <select id="filtroEstado">
+                        <option value="">Todos los estados</option>
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="En progreso">En progreso</option>
+                        <option value="Completada">Completada</option>
+                    </select>
+
+                    <input type="text" id="buscarTarea" placeholder="Buscar tarea">
                 </div>
-                <div class="stat-card">
-                    <p>Pendientes</p>
-                    <strong>--</strong>
-                </div>
-            </div>
-        </section>
+            </section>
 
-
-        <section>
-            <h2>Lista de tareas</h2>
-            <div id="tasks-list" class="tasks-grid"></div>
-            <p id="empty-state" class="empty-state">No hay tareas para mostrar. Agrega una tarea nueva o ajusta tus filtros.</p>
-        </section>
-
-       
+            <section>
+                <h2>Mis tareas guardadas</h2>
+                <div id="tasks-list" class="tasks-grid"></div>
+                <p id="empty-state" class="empty-state">No hay tareas agregadas.</p>
+            </section>
         </div>
     </main>
 
     <footer>
-        <p>Contacto: info@laesquinita.cr</p>
-        <p>© 2026 La Esquinita</p>
+        <div class="container">
+            <p>Contacto: info@laesquinita.cr</p>
+            <p>© 2026 La Esquinita</p>
+        </div>
     </footer>
+    <script src="js/misTareas.js"></script>
 </body>
 </html>

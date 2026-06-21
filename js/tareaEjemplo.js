@@ -19,7 +19,6 @@ const tareas = [
     prioridad: "Media",
     estado: "En progreso"
   },
-
   {
     id: 3,
     nombre: "Configuración de red en Packet Tracer",
@@ -30,7 +29,6 @@ const tareas = [
     prioridad: "Alta",
     estado: "Pendiente"
   },
-
   {
     id: 4,
     nombre: "Ensayo sobre ciberseguridad",
@@ -41,7 +39,6 @@ const tareas = [
     prioridad: "Media",
     estado: "Completada"
   },
-
   {
     id: 5,
     nombre: "Implementación de clases en Java",
@@ -51,5 +48,55 @@ const tareas = [
     fechaEntrega: "2026-06-28",
     prioridad: "Alta",
     estado: "En progreso"
+  },
+  {
+    id: 6,
+    nombre: "Pruebas unitarias con JUnit",
+    curso: "Programación en Ambiente Web I",
+    categoria: "Programación",
+    descripcion: "Implementar casos de prueba para validar la lógica del backend.",
+    fechaEntrega: "2026-06-30",
+    prioridad: "Alta",
+    estado: "Pendiente"
+  },
+  {
+    id: 7,
+    nombre: "Modelado de base de datos relacional",
+    curso: "Bases de Datos I",
+    categoria: "Diseño",
+    descripcion: "Diseñar el diagrama entidad-relación para el sistema de control de inventarios.",
+    fechaEntrega: "2026-06-24",
+    prioridad: "Alta",
+    estado: "En progreso"
+  },
+  {
+    id: 8,
+    nombre: "Resolución de problemas de grafos",
+    curso: "Matemática Discreta",
+    categoria: "Laboratorio",
+    descripcion: "Aplicar el algoritmo de Dijkstra para encontrar la ruta más corta en una red.",
+    fechaEntrega: "2026-06-26",
+    prioridad: "Media",
+    estado: "Pendiente"
+  },
+  {
+    id: 9,
+    nombre: "Maquetación responsive con CSS Grid",
+    curso: "Diseño de Interfaces",
+    categoria: "Diseño",
+    descripcion: "Ajustar la estructura del menú y del catálogo para dispositivos móviles.",
+    fechaEntrega: "2026-06-19",
+    prioridad: "Baja",
+    estado: "Completada"
+  },
+  {
+    id: 10,
+    nombre: "Persistencia de datos en localStorage",
+    curso: "Programación en Ambiente Web I",
+    categoria: "Programación",
+    descripcion: "Desarrollar las funciones para guardar, buscar y filtrar el estado del gestor.",
+    fechaEntrega: "2026-06-29",
+    prioridad: "Alta",
+    estado: "Pendiente"
   }
-];
+]
