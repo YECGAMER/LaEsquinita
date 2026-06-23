@@ -6,7 +6,7 @@
         "comentario": "¡Increíble! Logré organizar todas mis entregas de Ambiente Web I sin perder el hilo de las fechas importantes.",
         "estado": "Éxito total",
         "claseEstado": "disponible",
-        "imagen": "https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=500"
+        "imagen": "asset/images/testimonio 10.jpg"
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "comentario": "El organizador me salvó el cuatrimestre. La persistencia en datos locales me permite priorizar mi tiempo cada mañana.",
         "estado": "Muy recomendado",
         "claseEstado": "pocos-cupos",
-        "imagen": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500"
+        "imagen": "asset/images/testimonio 1.jpg"
     },
     {
         "id": 3,
@@ -24,7 +24,7 @@
         "comentario": "Excelente maquetación responsiva. Registro las asignaciones de inmediato desde el aula con el celular.",
         "estado": "Excelente",
         "claseEstado": "evento-lleno",
-        "imagen": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500"
+        "imagen": "asset/images/testimonio 2.jpg"
     },
     {
         "id": 4,
@@ -33,7 +33,7 @@
         "comentario": "Me encanta la fluidez de los filtros de búsqueda. Puedo segmentar tareas pendientes por materia en un segundo.",
         "estado": "Éxito total",
         "claseEstado": "disponible",
-        "imagen": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=500"
+        "imagen": "asset/images/testimonio 3.jpg"
     },
     {
         "id": 5,
@@ -42,7 +42,7 @@
         "comentario": "Tener el control de estadísticas con los contadores de tareas completadas me motiva a mantener el día con los laboratorios.",
         "estado": "Muy recomendado",
         "claseEstado": "pocos-cupos",
-        "imagen": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500"
+        "imagen": "asset/images/testimonio 4.jpg"
     },
     {
         "id": 6,
@@ -51,7 +51,7 @@
         "comentario": "Una herramienta indispensable para el entorno universitario. El diseño sin frameworks es sumamente rápido y limpio.",
         "estado": "Excelente",
         "claseEstado": "evento-lleno",
-        "imagen": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=500"
+        "imagen": "asset/images/testimonio 5.jpg"
     },
     {
         "id": 7,
@@ -60,7 +60,7 @@
         "comentario": "Antes olvidaba los proyectos pesados. Ahora, con las prioridades visuales en las tarjetas, sé exactamente qué hacer primero.",
         "estado": "Éxito total",
         "claseEstado": "disponible",
-        "imagen": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=500"
+        "imagen": "asset/images/testimonio 6.jpg"
     },
     {
         "id": 8,
@@ -69,7 +69,7 @@
         "comentario": "La sincronización con el almacenamiento interno evita que pierda información si cierro la pestaña del navegador.",
         "estado": "Muy recomendado",
         "claseEstado": "pocos-cupos",
-        "imagen": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=500"
+        "imagen": "asset/images/testimonio 7.jpg"
     },
     {
         "id": 9,
@@ -78,7 +78,7 @@
         "comentario": "Visualmente es súper agradable y ordenado. Cumple por completo su propósito de facilitar la vida estudiantil.",
         "estado": "Excelente",
         "claseEstado": "evento-lleno",
-        "imagen": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=500"
+        "imagen": "asset/images/testimonio 8.jpg"
     },
     {
         "id": 10,
@@ -87,6 +87,6 @@
         "comentario": "Sencillo, directo y robusto. Registrar tareas nuevas con validación en tiempo real previene cualquier error.",
         "estado": "Éxito total",
         "claseEstado": "disponible",
-        "imagen": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=500"
+        "imagen": "asset/images/testimonio 9.jpg"
     }
 ]
