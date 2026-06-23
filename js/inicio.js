@@ -35,8 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p class="card-comment-text">"${item.comentario}"</p>
                     <span class="course-tag">${item.curso}</span>
                     <h3>${item.nombre}</h3>
-                    <button class="badge-ref ${item.claseEstado}" style="align-self: flex-start; margin-bottom: 15px; border:none;">Estudiante Activo</button>
-                    <button class="action-card-button" onclick="window.location.href='misTareas.html'">Ver Información</button>
                 </div>
             `
             // Añade el nodo fabricado en tiempo de ejecución al contenedor de la interfaz

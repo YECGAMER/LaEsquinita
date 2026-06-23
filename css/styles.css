@@ -14,7 +14,7 @@
 
     /* Colores principales del proyecto */
 
-    --bg: #F8F9F4;
+    --bg: #7aa07a;
     --primary: #A3B18A;
     --primary-dark: #588157;
     --primary-deep: #3A5A40;
@@ -1190,63 +1190,75 @@ a.button {
     transform: translateY(-2px);
 }
 
-/* Sección contenedora */
+/* Sección contenedora con tu fondo principal */
 .testimonials-section {
-    padding: 40px 0;
-    background-color: #f8fafd;
+    padding: 30px 0;
+    background-color: #F8F9F4; /* Blanco suave */
 }
 
 .testimonials-section h2 {
     text-align: center;
-    color: #1a237e;
-    margin-bottom: 25px;
+    color: #3A5A40; /* Verde oscuro */
+    margin-bottom: 20px;
 }
 
-/* Fila de insignias superiores de referencia rápida */
+/* Fila de insignias superiores con tus colores */
 .badge-legend {
     display: flex;
     gap: 10px;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .badge-ref {
-    padding: 6px 14px;
+    padding: 5px 12px;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: bold;
 }
 
-/* Rejilla de tarjetas alineadas */
+/* Contenedor HORIZONTAL hacia el lado (scroll lateral) */
 .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    padding: 10px;
+    display: flex;
+    flex-wrap: nowrap; /* Fuerza a las tarjetas a ir hacia el lado, no hacia abajo */
+    gap: 15px;
+    padding: 15px;
+    overflow-x: auto; /* Activa la barra de desplazamiento horizontal si sobresalen */
+    scroll-behavior: smooth;
 }
 
-/* Tarjeta base */
+/* Personalización de la barra de scroll para que se vea sutil */
+.testimonials-grid::-webkit-scrollbar {
+    height: 8px;
+}
+.testimonials-grid::-webkit-scrollbar-thumb {
+    background: #A3B18A; /* Verde sage */
+    border-radius: 4px;
+}
+
+/* Tarjeta base MÁS PEQUEÑA y compacta */
 .custom-recommendation-card {
-    background: #ffffff;
-    border-radius: 12px;
+    background: #DAD7CD; /* Beige cálido */
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border: 1px solid #eef2f7;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #A3B18A;
     display: flex;
     flex-direction: column;
     position: relative;
+    flex: 0 0 250px; /* Ancho fijo y pequeño para cada tarjeta */
     transition: transform 0.2s;
 }
 
 .custom-recommendation-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
 }
 
-/* Contenedor de imagen fija */
+/* Contenedor de imagen más baja */
 .card-image-wrapper {
     position: relative;
     width: 100%;
-    height: 180px;
+    height: 120px; /* Reducido para que sea más compacta */
 }
 
 .card-image-wrapper img {
@@ -1255,74 +1267,75 @@ a.button {
     object-fit: cover;
 }
 
-/* Chips de estados dinámicos (Posición absoluta sobre la foto) */
+/* Chips de estados sobre la foto */
 .status-badge-floating {
     position: absolute;
-    top: 12px;
-    right: 12px;
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-size: 0.75rem;
+    top: 8px;
+    right: 8px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
     font-weight: bold;
     color: #ffffff;
-    background-color: rgba(13, 71, 161, 0.85);
+    background-color: #3A5A40; /* Verde oscuro para contraste */
 }
 
-/* Cuerpo de la tarjeta con rellenos */
+/* Cuerpo de la tarjeta */
 .card-content-body {
-    padding: 20px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
 .card-comment-text {
-    font-size: 0.9rem;
-    color: #555555;
-    line-height: 1.5;
-    margin: 0 0 15px 0;
-    min-height: 54px; /* Mantiene la alineación de textos cortos */
+    font-size: 0.85rem;
+    color: #344E41; /* Gris oscuro para el texto */
+    line-height: 1.4;
+    margin: 0 0 10px 0;
+    min-height: 60px; /* Mantiene la misma altura de texto */
 }
 
 /* Chip de categoría de curso */
 .course-tag {
     display: inline-block;
     align-self: flex-start;
-    background-color: #e3f2fd;
-    color: #0d47a1;
-    padding: 5px 12px;
-    border-radius: 8px;
-    font-size: 0.8rem;
+    background-color: #3A5A40; /* Verde oscuro */
+    color: #F8F9F4; /* Texto blanco suave */
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
     font-weight: bold;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .card-content-body h3 {
-    font-size: 1.2rem;
-    color: #0d47a1;
+    font-size: 1rem;
+    color: #3A5A40; /* Verde oscuro */
     margin: 0 0 8px 0;
 }
 
-/* Clases de colores basadas en tu captura */
-.disponible { background-color: #e8f5e9; color: #2e7d32; }
-.pocos-cupos { background-color: #fffde7; color: #f57f17; }
-.evento-lleno { background-color: #ffebee; color: #c62828; }
+/* Clases de estados según tu paleta */
+.disponible { background-color: #A3B18A; color: #3A5A40; } /* Verde sage */
+.pocos-cupos { background-color: #BC6C25; color: #F8F9F4; } /* Terracota suave */
+.evento-lleno { background-color: #588157; color: #F8F9F4; } /* Verde oliva */
 
-/* Botones inferiores idénticos a los tuyos */
+/* Botón de acción con tus colores */
 .action-card-button {
-    background-color: #001f4d;
-    color: white;
+    background-color: #A3B18A; /* Verde sage */
+    color: #344E41; /* Gris oscuro para las letras */
     border: none;
-    padding: 10px 18px;
-    border-radius: 6px;
+    padding: 8px 14px;
+    border-radius: 5px;
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     cursor: pointer;
     align-self: flex-start;
-    margin-top: auto; /* Empuja el botón al fondo */
+    margin-top: auto;
     transition: background-color 0.2s;
 }
 
 .action-card-button:hover {
-    background-color: #0d47a1;
+    background-color: #588157; /* Verde oliva en Hover */
+    color: #F8F9F4;
 }
