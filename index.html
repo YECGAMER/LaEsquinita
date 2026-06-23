@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="La Esquinita - Organiza tus tareas universitarias y controla tus entregas desde cualquier dispositivo." />
     <meta name="keywords" content="tareas universitarias, organización, calendario, pendientes, localStorage, La Esquinita" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>La Esquinita | Inicio</title>
 </head>
 <body>
@@ -34,6 +34,19 @@
             </div>
         </div>
     </section>
+   <section class="testimonials-section">
+    <div class="container">
+        <h2>Listado de recomendaciones</h2>
+        
+        <div class="badge-legend">
+            <span class="badge-ref disponible">Éxito total</span>
+            <span class="badge-ref pocos-cupos">Muy recomendado</span>
+            <span class="badge-ref evento-lleno">Excelente</span>
+        </div>
+        
+        <div id="testimonials-container" class="testimonials-grid"></div>
+    </div>
+</section>
     <section class="problem-section">
         <div class="container">
             <h2>¿Qué busca resolver?</h2>
@@ -65,5 +78,7 @@
         <p>© 2026 La Esquinita</p>
     </div>
 </footer>
+<script src="js/inicio.js"></script>
+<script src="data/testimonios.json"></script>
 </body>
 </html>

@@ -1189,3 +1189,140 @@ a.button {
     color: var(--primary-dark);
     transform: translateY(-2px);
 }
+
+/* Sección contenedora */
+.testimonials-section {
+    padding: 40px 0;
+    background-color: #f8fafd;
+}
+
+.testimonials-section h2 {
+    text-align: center;
+    color: #1a237e;
+    margin-bottom: 25px;
+}
+
+/* Fila de insignias superiores de referencia rápida */
+.badge-legend {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.badge-ref {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Rejilla de tarjetas alineadas */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 10px;
+}
+
+/* Tarjeta base */
+.custom-recommendation-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eef2f7;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.custom-recommendation-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Contenedor de imagen fija */
+.card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 180px;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Chips de estados dinámicos (Posición absoluta sobre la foto) */
+.status-badge-floating {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: rgba(13, 71, 161, 0.85);
+}
+
+/* Cuerpo de la tarjeta con rellenos */
+.card-content-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-comment-text {
+    font-size: 0.9rem;
+    color: #555555;
+    line-height: 1.5;
+    margin: 0 0 15px 0;
+    min-height: 54px; /* Mantiene la alineación de textos cortos */
+}
+
+/* Chip de categoría de curso */
+.course-tag {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.card-content-body h3 {
+    font-size: 1.2rem;
+    color: #0d47a1;
+    margin: 0 0 8px 0;
+}
+
+/* Clases de colores basadas en tu captura */
+.disponible { background-color: #e8f5e9; color: #2e7d32; }
+.pocos-cupos { background-color: #fffde7; color: #f57f17; }
+.evento-lleno { background-color: #ffebee; color: #c62828; }
+
+/* Botones inferiores idénticos a los tuyos */
+.action-card-button {
+    background-color: #001f4d;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-top: auto; /* Empuja el botón al fondo */
+    transition: background-color 0.2s;
+}
+
+.action-card-button:hover {
+    background-color: #0d47a1;
+}

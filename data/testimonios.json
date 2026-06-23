@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "nombre": "Mariana Alfaro",
+        "curso": "Desarrollo Web",
+        "comentario": "¡Increíble! Logré organizar todas mis entregas de Ambiente Web I sin perder el hilo de las fechas importantes.",
+        "estado": "Éxito total",
+        "claseEstado": "disponible",
+        "imagen": "https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=500"
+    },
+    {
+        "id": 2,
+        "nombre": "Aaron Castillo",
+        "curso": "Ingeniería de Software",
+        "comentario": "El organizador me salvó el cuatrimestre. La persistencia en datos locales me permite priorizar mi tiempo cada mañana.",
+        "estado": "Muy recomendado",
+        "claseEstado": "pocos-cupos",
+        "imagen": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500"
+    },
+    {
+        "id": 3,
+        "nombre": "Yecsen Ulate",
+        "curso": "Diseño de Interfaces",
+        "comentario": "Excelente maquetación responsiva. Registro las asignaciones de inmediato desde el aula con el celular.",
+        "estado": "Excelente",
+        "claseEstado": "evento-lleno",
+        "imagen": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500"
+    },
+    {
+        "id": 4,
+        "nombre": "Keylor Brenes",
+        "curso": "Bases de Datos",
+        "comentario": "Me encanta la fluidez de los filtros de búsqueda. Puedo segmentar tareas pendientes por materia en un segundo.",
+        "estado": "Éxito total",
+        "claseEstado": "disponible",
+        "imagen": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=500"
+    },
+    {
+        "id": 5,
+        "nombre": "Valeria Monge",
+        "curso": "Redes Computacionales",
+        "comentario": "Tener el control de estadísticas con los contadores de tareas completadas me motiva a mantener el día con los laboratorios.",
+        "estado": "Muy recomendado",
+        "claseEstado": "pocos-cupos",
+        "imagen": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500"
+    },
+    {
+        "id": 6,
+        "nombre": "Ignacio Herrera",
+        "curso": "Desarrollo Web",
+        "comentario": "Una herramienta indispensable para el entorno universitario. El diseño sin frameworks es sumamente rápido y limpio.",
+        "estado": "Excelente",
+        "claseEstado": "evento-lleno",
+        "imagen": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=500"
+    },
+    {
+        "id": 7,
+        "nombre": "Camila Chaves",
+        "curso": "Matemática Discreta",
+        "comentario": "Antes olvidaba los proyectos pesados. Ahora, con las prioridades visuales en las tarjetas, sé exactamente qué hacer primero.",
+        "estado": "Éxito total",
+        "claseEstado": "disponible",
+        "imagen": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=500"
+    },
+    {
+        "id": 8,
+        "nombre": "Luis Diego Solano",
+        "curso": "Ingeniería de Software",
+        "comentario": "La sincronización con el almacenamiento interno evita que pierda información si cierro la pestaña del navegador.",
+        "estado": "Muy recomendado",
+        "claseEstado": "pocos-cupos",
+        "imagen": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=500"
+    },
+    {
+        "id": 9,
+        "nombre": "Fabiola Gutiérrez",
+        "curso": "Diseño de Interfaces",
+        "comentario": "Visualmente es súper agradable y ordenado. Cumple por completo su propósito de facilitar la vida estudiantil.",
+        "estado": "Excelente",
+        "claseEstado": "evento-lleno",
+        "imagen": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=500"
+    },
+    {
+        "id": 10,
+        "nombre": "Alejandro Vargas",
+        "curso": "Programación I",
+        "comentario": "Sencillo, directo y robusto. Registrar tareas nuevas con validación en tiempo real previene cualquier error.",
+        "estado": "Éxito total",
+        "claseEstado": "disponible",
+        "imagen": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=500"
+    }
+]
