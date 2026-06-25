@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Escuchar cambios en todos los campos interactivos del formulario
     const campos = document.querySelectorAll("#formOrganizador input, #formOrganizador select, #formOrganizador textarea")
-    
+
     campos.forEach(function (campo) {
         campo.addEventListener("input", mostrarVistaPrevia)
         campo.addEventListener("change", mostrarVistaPrevia)
@@ -50,7 +50,11 @@ document.addEventListener("DOMContentLoaded", function () {
     btnAgregarTarea.addEventListener("click", function () {
         // Validación de datos básica antes de almacenar
         if (!nombreTarea.value || !curso.value || !fechaEntrega.value) {
-            alert("Por favor completa los campos principales (Nombre, Curso y Fecha)")
+              Swal.fire({
+            title: "Incompleto",
+            text: "Por favor completa los campos principales (Nombre, Curso y Fecha)",
+            icon: "success"
+            });
             return
         }
 
@@ -69,7 +73,12 @@ document.addEventListener("DOMContentLoaded", function () {
         listaTareas.push(nuevaTarea)
         localStorage.setItem("tareas", JSON.stringify(listaTareas))
 
-        alert("Tarea agregada correctamente")
+        Swal.fire({
+            title: "Bien hecho!",
+            text: "Tarea agregada correctamente!",
+            icon: "success"
+        });
+
         limpiarFormulario()
     })
 

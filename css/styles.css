@@ -46,7 +46,8 @@ header {
     background: var(--bg-seccion);
     color: var(--neon-green);
     padding: 18px 0;
-    border-bottom: 1px solid var(--border-tech);
+    border-bottom: 2px solid var(--neon-red); 
+    box-shadow: 0 0 15px rgba(255, 0, 60, 0.2);
 }
 
 header .container {
