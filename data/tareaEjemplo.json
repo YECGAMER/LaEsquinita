@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "nombre": "Investigación sobre metodologías ágiles",
+    "curso": "Programación en Ambiente Web I",
+    "categoria": "Investigación",
+    "descripcion": "Realizar un análisis sobre Scrum y Kanban aplicado al desarrollo de software.",
+    "fechaEntrega": "2026-06-20",
+    "prioridad": "Alta",
+    "estado": "Pendiente"
+  },
+  {
+    "id": 2,
+    "nombre": "Diseño de interfaz para proyecto web",
+    "curso": "Diseño de Interfaces",
+    "categoria": "Diseño",
+    "descripcion": "Crear los prototipos de las pantallas principales del sistema web.",
+    "fechaEntrega": "2026-06-18",
+    "prioridad": "Media",
+    "estado": "En progreso"
+  },
+  {
+    "id": 3,
+    "nombre": "Configuración de red en Packet Tracer",
+    "curso": "Redes Computacionales",
+    "categoria": "Laboratorio",
+    "descripcion": "Configurar router y switch aplicando medidas básicas de seguridad.",
+    "fechaEntrega": "2026-06-25",
+    "prioridad": "Alta",
+    "estado": "Pendiente"
+  },
+  {
+    "id": 4,
+    "nombre": "Ensayo sobre ciberseguridad",
+    "curso": "Técnicas de Comunicación Oral y Escrita",
+    "categoria": "Ensayo",
+    "descripcion": "Elaborar un ensayo con formato APA sobre amenazas digitales actuales.",
+    "fechaEntrega": "2026-06-22",
+    "prioridad": "Media",
+    "estado": "Completada"
+  },
+  {
+    "id": 5,
+    "nombre": "Implementación de clases en Java",
+    "curso": "Programación I",
+    "categoria": "Programación",
+    "descripcion": "Crear un programa utilizando clases, objetos y métodos en Java.",
+    "fechaEntrega": "2026-06-28",
+    "prioridad": "Alta",
+    "estado": "En progreso"
+  },
+  {
+    "id": 6,
+    "nombre": "Pruebas unitarias con JUnit",
+    "curso": "Programación en Ambiente Web I",
+    "categoria": "Programación",
+    "descripcion": "Implementar casos de prueba para validar la lógica del backend.",
+    "fechaEntrega": "2026-06-30",
+    "prioridad": "Alta",
+    "estado": "Pendiente"
+  },
+  {
+    "id": 7,
+    "nombre": "Modelado de base de datos relacional",
+    "curso": "Bases de Datos I",
+    "categoria": "Diseño",
+    "descripcion": "Diseñar el diagrama entidad-relación para el sistema de control de inventarios.",
+    "fechaEntrega": "2026-06-24",
+    "prioridad": "Alta",
+    "estado": "En progreso"
+  },
+  {
+    "id": 8,
+    "nombre": "Resolución de problemas de grafos",
+    "curso": "Matemática Discreta",
+    "categoria": "Laboratorio",
+    "descripcion": "Aplicar el algoritmo de Dijkstra para encontrar la ruta más corta en una red.",
+    "fechaEntrega": "2026-06-26",
+    "prioridad": "Media",
+    "estado": "Pendiente"
+  },
+  {
+    "id": 9,
+    "nombre": "Maquetación responsive con CSS Grid",
+    "curso": "Diseño de Interfaces",
+    "categoria": "Diseño",
+    "descripcion": "Ajustar la estructura del menú y del catálogo para dispositivos móviles.",
+    "fechaEntrega": "2026-06-19",
+    "prioridad": "Baja",
+    "estado": "Completada"
+  },
+  {
+    "id": 10,
+    "nombre": "Persistencia de datos en localStorage",
+    "curso": "Programación en Ambiente Web I",
+    "categoria": "Programación",
+    "descripcion": "Desarrollar las funciones para guardar, buscar y filtrar el estado del gestor.",
+    "fechaEntrega": "2026-06-29",
+    "prioridad": "Alta",
+    "estado": "Pendiente"
+  }
+]

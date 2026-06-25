@@ -4,18 +4,23 @@
 ===================================================== */
 
 :root {
-    color-scheme: dark;
+    color-scheme: light;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
 
-    --bg: #000000;                 /* Fondo Absoluto - Negrura pura */
-    --bg-seccion: #05080e;         /* Fondo Secciones - Gris terminal */
-    --card: #0b111a;               /* Fondo Tarjetas - Azul medianoche tech */
-    --neon-green: #39ff14;         /* Verde Matrix - Títulos y elementos principales */
-    --neon-red: #ff003c;           /* Cyberpunk Coral - Alertas, bordes de menú y footer */
-    --text-bright: #ffffff;        /* Texto Blanco Puro - Máxima prioridad */
-    --text-muted: #8899a6;         /* Gris Plateado Suave - Párrafos y descripciones */
-    --border-tech: #162235;        /* Línea Cibernética - Bordes estructurales discretos */
+    --bg: #FFF8F0;                 /* Fondo General - Crema claro */
+    --bg-seccion: #ffffff;         /* Fondo Secciones - Blanco puro */
+    --card: #FFF8F0;               /* Fondo Tarjetas - Crema claro uniforme */
+    
+    /* Paleta de Marrones */
+    --brand-light: #C08552;        /* Marrón claro / Café con leche */
+    --brand-medium: #8C5A3C;       /* Marrón medio / Caramelo */
+    --brand-dark: #4B2E2B;         /* Marrón oscuro / Chocolate */
+    
+    /* Colores de Estado Solicitados */
+    --estado-rojo: #ff4d4d;        /* Pendiente */
+    --estado-verde: #2ec4b6;       /* Completada */
+    --estado-naranja: #ff9f1c;     /* En Proceso / Pendiente Extra */
 }
 
 /* =====================================================
@@ -30,11 +35,11 @@ body {
     margin: 0;
     padding: 0;
     background: var(--bg);
-    color: var(--text);
+    color: var(--brand-dark);
 }
 
 .container {
-    width: min(1024px,90%);
+    width: min(1024px, 90%);
     margin: 0 auto;
 }
 
@@ -44,10 +49,10 @@ body {
 
 header {
     background: var(--bg-seccion);
-    color: var(--neon-green);
+    color: var(--brand-light);
     padding: 18px 0;
-    border-bottom: 2px solid var(--neon-red); 
-    box-shadow: 0 0 15px rgba(255, 0, 60, 0.2);
+    border-bottom: 2px solid var(--brand-medium); 
+    box-shadow: 0 4px 15px rgba(140, 90, 60, 0.1);
 }
 
 header .container {
@@ -58,14 +63,14 @@ header .container {
 
 /* Logo */
 .brand-header {
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
 }
 
 .logo-img {
-    width:340px;
-    height:auto;
-    display:block;
+    width: 340px;
+    height: auto;
+    display: block;
 }
 
 /* Navegación */
@@ -79,15 +84,15 @@ nav ul {
 }
 
 nav a {
-    color: var(--text-bright);
+    color: var(--brand-dark);
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.2s ease;
+    transition: color 0.25s ease;
 }
 
 nav a:hover,
 nav a:focus {
-    color: var(--neon-green);
+    color: var(--brand-light);
 }
 
 /* =====================================================
@@ -102,9 +107,9 @@ main {
 /* Cada sección del sitio */
 section {
     background: var(--bg-seccion);
-    border: 1px solid var(--border-tech);
+    border: 1px solid var(--brand-light);
     border-radius: 22px;
-    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.5); /* Sombra oscura más acorde al tema */
+    box-shadow: 0 10px 25px rgba(75, 46, 43, 0.05);
     padding: 28px;
     margin-bottom: 24px;
 }
@@ -113,7 +118,7 @@ section {
 h1,
 h2,
 h3 {
-    color: var(--neon-green);
+    color: var(--brand-dark);
     margin-top: 0;
 }
 
@@ -130,13 +135,14 @@ h2 {
 p {
     line-height: 1.75;
     margin: 0;
-    color: var(--text-muted);
+    color: var(--brand-medium);
 }
 
 /* =====================================================
-   BOTONES GENERALES
+   BOTONES GENERALES DEL SISTEMA
 ===================================================== */
 .button,
+button,
 a.button {
     display: inline-block;
     padding: 0.95rem 1.6rem;
@@ -144,22 +150,39 @@ a.button {
     text-decoration: none;
     font-weight: 600;
     cursor: pointer;
-    transition: transform .2s ease, background .25s ease;
+    transition: transform .2s ease, background .25s ease, box-shadow .25s ease;
 }
 
-.button-primary {
-    background: var(--neon-green);
-    color: #000000;
+/* Botón principal */
+.button-primary,
+#btnAgregarTarea {
+    background: var(--brand-light);
+    color: #FFF8F0;
     border: none;
 }
 
-.button-primary:hover {
-    background: #2ecc10; 
+.button-primary:hover,
+#btnAgregarTarea:hover {
+    background: var(--brand-medium);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(140, 90, 60, 0.2);
+}
+
+/* Botón secundario */
+.button-secondary {
+    background: transparent;
+    color: var(--brand-light);
+    border: 2px solid var(--brand-light);
+}
+
+.button-secondary:hover {
+    background: rgba(192, 133, 82, 0.15);
+    color: var(--brand-dark);
+    transform: translateY(-2px);
 }
 
 /* =====================================================
    TARJETAS DE ESTADÍSTICAS
-   Usadas en Inicio y Mis tareas
 ===================================================== */
 
 .stats-grid {
@@ -171,7 +194,7 @@ a.button {
 
 .stat-card {
     background: var(--card);
-    border: 1px solid var(--border-tech);
+    border: 1px solid var(--brand-light);
     border-radius: 18px;
     padding: 20px;
 }
@@ -190,7 +213,7 @@ a.button {
     background: var(--card);
     border-radius: 18px;
     padding: 20px;
-    border: 1px solid var(--border-tech);
+    border: 1px solid var(--brand-light);
 }
 
 .task-top {
@@ -202,13 +225,13 @@ a.button {
 }
 
 .task-course {
-    color: var(--neon-green);
+    color: var(--brand-dark);
     font-weight: 600;
 }
 
 .task-description {
     margin-bottom: 20px;
-    color: var(--text-muted);
+    color: var(--brand-medium);
 }
 
 .task-meta {
@@ -219,7 +242,7 @@ a.button {
 }
 
 /* =====================================================
-   ESTADOS DE LAS TAREAS
+   ESTADOS DE LAS TAREAS (CHIPS)
 ===================================================== */
 
 .status-chip {
@@ -230,20 +253,29 @@ a.button {
     font-weight: 700;
 }
 
+/* Rojo para pendiente */
 .status-pendiente {
-    background: rgba(255, 0, 60, 0.15);
-    color: var(--neon-red);
+    background: rgba(255, 77, 77, 0.15);
+    color: var(--estado-rojo);
+    border: 1px solid rgba(255, 77, 77, 0.3);
 }
 
+/* Verde para completada */
 .status-completada {
-    background: rgba(57, 255, 20, 0.15);
-    color: var(--neon-green);
+    background: rgba(46, 196, 182, 0.15);
+    color: var(--estado-verde);
+    border: 1px solid rgba(46, 196, 182, 0.3);
+}
+
+/* Naranja para el otro estado pendiente / en progreso */
+.status-proceso {
+    background: rgba(255, 159, 28, 0.15);
+    color: var(--estado-naranja);
+    border: 1px solid rgba(255, 159, 28, 0.3);
 }
 
 /* =====================================================
    FORMULARIO DEL ORGANIZADOR
-   Divide pantalla en:
-   formulario | vista previa
 ===================================================== */
 .task-layout {
     display: grid;
@@ -252,39 +284,36 @@ a.button {
     align-items: start;
 }
 
-/* Contenedor del formulario */
 .task-form {
     background: var(--bg-seccion);
     border-radius: 22px;
     padding: 28px;
-    border: 1px solid var(--border-tech);
-    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--brand-light);
+    box-shadow: 0 10px 25px rgba(75, 46, 43, 0.05);
 }
 
-/* Espacio entre campos */
 .task-form .form-group {
     display: grid;
     gap: 10px;
     margin-bottom: 18px;
 }
 
-/* Nombre de los campos */
 .task-form label {
     font-weight: 600;
-    color: var(--neon-green);
+    color: var(--brand-dark);
 }
 
-/* Inputs, select y textarea */
 input,
 select,
 textarea {
     width: 100%;
     padding: 14px 16px;
-    border: 1px solid var(--border-tech);
+    border: 1px solid var(--brand-light);
     border-radius: 14px;
     font: inherit;
-    color: var(--text-bright);
+    color: var(--brand-dark);
     background: var(--card);
+    transition: outline 0.2s ease, box-shadow 0.2s ease;
 }
 
 textarea {
@@ -295,68 +324,47 @@ textarea {
 input:focus,
 select:focus,
 textarea:focus {
-    outline: 2px solid var(--neon-green);
-}
-
-/* =====================================================
-   BOTÓN AGREGAR TAREA
-===================================================== */
-
-#btnAgregarTarea {
-    background: var(--neon-green);
-    color: #000000;
-    border: none;
-    padding: 14px 24px;
-    border-radius: 999px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform .2s ease, background .25s ease;
-}
-
-#btnAgregarTarea:hover {
-    background: #2ecc10;
-    transform: translateY(-2px);
+    outline: 2px solid var(--brand-light);
+    box-shadow: 0 0 8px rgba(192, 133, 82, 0.2);
 }
 
 /* =====================================================
    VISTA PREVIA
-   Muestra la información antes de guardar
 ===================================================== */
 
 .task-preview {
     background: var(--card);
     border-radius: 22px;
     padding: 28px;
-    border: 1px solid var(--border-tech);
+    border: 1px solid var(--brand-light);
     min-height: 350px;
 }
 
 .task-preview h3 {
-    color: var(--neon-green);
+    color: var(--brand-dark);
     margin-bottom: 20px;
 }
 
 .task-preview p {
     margin-bottom: 12px;
-    color: var(--text-bright);
+    color: var(--brand-dark);
 }
 
 /* =====================================================
    FILTROS DE MIS TAREAS
-   Los coloca de forma horizontal
 ===================================================== */
 
 .filters-horizontal {
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
-    align-items:center;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .filters-horizontal select,
 .filters-horizontal input {
-    flex:1;
-    min-width:180px;
+    flex: 1;
+    min-width: 180px;
 }
 
 /* =====================================================
@@ -367,18 +375,17 @@ textarea:focus {
     background: var(--card);
     border-radius: 18px;
     padding: 20px;
-    border: 1px solid var(--border-tech);
+    border: 1px solid var(--brand-light);
     margin-bottom: 18px;
 }
 
 .user-task-card h3 {
-    color: var(--neon-green);
+    color: var(--brand-dark);
 }
 
-/* Información de la tarea */
 .task-info {
     margin-bottom: 15px;
-    color: var(--text-muted);
+    color: var(--brand-medium);
 }
 
 /* =====================================================
@@ -392,33 +399,35 @@ textarea:focus {
 }
 
 .complete-button {
-    background: var(--neon-green);
-    color: #000000;
+    background: var(--brand-light);
+    color: #FFF8F0;
     border: none;
     padding: 10px 18px;
     border-radius: 999px;
     cursor: pointer;
     font-weight: 600;
-    transition: background 0.25s ease;
+    transition: background 0.25s ease, transform 0.2s ease;
 }
 
 .complete-button:hover {
-    background: #2ecc10;
+    background: var(--brand-medium);
+    transform: translateY(-1px);
 }
 
 .delete-button {
-    background: var(--neon-red);
-    color: var(--text-bright);
+    background: var(--brand-dark);
+    color: #FFF8F0;
     border: none;
     padding: 10px 18px;
     border-radius: 999px;
     cursor: pointer;
     font-weight: 600;
-    transition: background 0.25s ease;
+    transition: background 0.25s ease, transform 0.2s ease;
 }
 
 .delete-button:hover {
-    background: #b3002a; /* Un tono rojo más oscuro para el hover */
+    background: #331f1d; 
+    transform: translateY(-1px);
 }
 
 /* =====================================================
@@ -427,7 +436,7 @@ textarea:focus {
 
 .empty-state {
     margin-top: 14px;
-    color: var(--text-muted);
+    color: var(--brand-medium);
 }
 
 /* =====================================================
@@ -435,102 +444,53 @@ textarea:focus {
 ===================================================== */
 footer {
     background: var(--bg-seccion);
-    color: var(--text-muted);
+    color: var(--brand-medium);
     text-align: center;
     padding: 18px 20px;
     font-size: .95rem;
-    border-top: 1px solid var(--neon-red); /* Borde característico del menú/footer */
+    border-top: 1px solid var(--brand-medium); 
 }
 
 /* =====================================================
    DISEÑO RESPONSIVO
-   Para celulares y tablets
 ===================================================== */
 
 @media(max-width:840px){
-
     .stats-grid {
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
     }
-
     .task-layout {
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
     }
-
     .tasks-calendar-layout {
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
     }
 }
 
 @media(max-width:640px){
     header .container {
-        flex-direction:column;
-        gap:15px;
+        flex-direction: column;
+        gap: 15px;
     }
-
     .logo-img {
-        width:180px;
+        width: 180px;
     }
-
     nav ul {
-        flex-direction:column;
-        text-align:center;
+        flex-direction: column;
+        text-align: center;
     }
-
     .filters-horizontal {
-        flex-direction:column;
+        flex-direction: column;
     }
-
     .filters-horizontal select,
     .filters-horizontal input {
-        width:100%;
+        width: 100%;
     }
-
 }
 
-/* ===============================
-   BOTONES GENERALES DEL SISTEMA
-================================ */
-.button,
-button,
-a.button {
-    display: inline-block;
-    padding: 0.95rem 1.6rem;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform .2s ease, background .25s ease;
-}
-
-/* Botón principal */
-.button-primary,
-#btnAgregarTarea {
-    background: var(--neon-green);
-    color: #000000;
-    border: none;
-}
-
-.button-primary:hover,
-#btnAgregarTarea:hover {
-    background: #2ecc10;
-    transform: translateY(-2px);
-}
-
-/* Botón secundario */
-.button-secondary {
-    background: transparent;
-    color: var(--neon-green);
-    border: 2px solid var(--neon-green);
-}
-
-.button-secondary:hover {
-    background: rgba(57, 255, 20, 0.15);
-    color: var(--text-bright);
-    transform: translateY(-2px);
-}
-
-/* Sección contenedora con tu fondo principal */
+/* =====================================================
+   SECCIÓN DE TESTIMONIOS / RECOMENDACIONES
+===================================================== */
 .testimonials-section {
     padding: 30px 0;
     background-color: var(--bg);
@@ -538,11 +498,10 @@ a.button {
 
 .testimonials-section h2 {
     text-align: center;
-    color: var(--neon-green);
+    color: var(--brand-dark);
     margin-bottom: 20px;
 }
 
-/* Fila de insignias superiores con tus colores */
 .badge-legend {
     display: flex;
     gap: 10px;
@@ -557,7 +516,6 @@ a.button {
     font-weight: bold;
 }
 
-/* Contenedor HORIZONTAL hacia el lado (scroll lateral) */
 .testimonials-grid {
     display: flex;
     flex-wrap: nowrap;
@@ -567,38 +525,37 @@ a.button {
     scroll-behavior: smooth;
 }
 
-/* Personalización de la barra de scroll para que se vea sutil */
 .testimonials-grid::-webkit-scrollbar {
     height: 8px;
 }
 .testimonials-grid::-webkit-scrollbar-thumb {
-    background: var(--border-tech);
+    background: var(--brand-light);
     border-radius: 4px;
 }
 .testimonials-grid::-webkit-scrollbar-thumb:hover {
-    background: var(--neon-green);
+    background: var(--brand-medium);
 }
 
-/* Tarjeta base MÁS PEQUEÑA y compacta */
+/* Tarjetas de Recomendación */
 .custom-recommendation-card {
     background: var(--card);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--border-tech);
+    box-shadow: 0 6px 15px rgba(75, 46, 43, 0.05);
+    border: 1px solid var(--brand-light);
     display: flex;
     flex-direction: column;
     position: relative;
     flex: 0 0 250px;
-    transition: transform 0.2s, border-color 0.2s;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .custom-recommendation-card:hover {
     transform: translateY(-3px);
-    border-color: var(--neon-green);
+    border-color: var(--brand-medium);
+    box-shadow: 0 8px 20px rgba(75, 46, 43, 0.1);
 }
 
-/* Contenedor de imagen más baja */
 .card-image-wrapper {
     position: relative;
     width: 100%;
@@ -609,10 +566,8 @@ a.button {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(20%) contrast(110%);
 }
 
-/* Chips de estados sobre la foto */
 .status-badge-floating {
     position: absolute;
     top: 8px;
@@ -621,11 +576,10 @@ a.button {
     border-radius: 10px;
     font-size: 0.7rem;
     font-weight: bold;
-    color: #000000;
-    background-color: var(--neon-green);
+    color: #FFF8F0;
+    background-color: var(--brand-light);
 }
 
-/* Cuerpo de la tarjeta */
 .card-content-body {
     padding: 12px;
     display: flex;
@@ -635,19 +589,18 @@ a.button {
 
 .card-comment-text {
     font-size: 0.85rem;
-    color: var(--text-muted);
+    color: var(--brand-medium);
     line-height: 1.4;
     margin: 0 0 10px 0;
     min-height: 60px;
 }
 
-/* Chip de categoría de curso */
 .course-tag {
     display: inline-block;
     align-self: flex-start;
     background-color: var(--bg-seccion);
-    color: var(--neon-green);
-    border: 1px solid var(--border-tech);
+    color: var(--brand-medium);
+    border: 1px solid var(--brand-light);
     padding: 3px 8px;
     border-radius: 6px;
     font-size: 0.75rem;
@@ -657,32 +610,32 @@ a.button {
 
 .card-content-body h3 {
     font-size: 1rem;
-    color: var(--text-bright);
+    color: var(--brand-dark);
     margin: 0 0 8px 0;
 }
 
-/* Clases de estados según tu paleta */
+/* Clases de estados para los Cursos/Eventos */
 .disponible { 
-    background-color: rgba(57, 255, 20, 0.15); 
-    color: var(--neon-green); 
-    border: 1px solid var(--neon-green); 
+    background-color: rgba(46, 196, 182, 0.15); 
+    color: var(--estado-verde); 
+    border: 1px solid var(--estado-verde); 
 }
 .pocos-cupos { 
-    background-color: rgba(255, 0, 60, 0.15); 
-    color: var(--neon-red); 
-    border: 1px solid var(--neon-red); 
+    background-color: rgba(255, 159, 28, 0.15); 
+    color: var(--estado-naranja); 
+    border: 1px solid var(--estado-naranja); 
 }
 .evento-lleno { 
-    background-color: var(--border-tech); 
-    color: var(--text-muted); 
-    border: 1px solid var(--border-tech); 
+    background-color: rgba(255, 77, 77, 0.15); 
+    color: var(--estado-rojo); 
+    border: 1px solid var(--estado-rojo); 
 }
 
-/* Botón de acción con tus colores */
+/* Botón de acción de las tarjetas */
 .action-card-button {
     background-color: transparent;
-    color: var(--neon-green);
-    border: 1px solid var(--neon-green);
+    color: var(--brand-light);
+    border: 1px solid var(--brand-light);
     padding: 8px 14px;
     border-radius: 5px;
     font-weight: bold;
@@ -690,10 +643,10 @@ a.button {
     cursor: pointer;
     align-self: flex-start;
     margin-top: auto;
-    transition: background-color 0.2s, color 0.2s;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .action-card-button:hover {
-    background-color: var(--neon-green);
-    color: #000000;
+    background-color: var(--brand-light);
+    color: #FFF8F0;
 }
