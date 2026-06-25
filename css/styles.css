@@ -2,27 +2,26 @@
    LA ESQUINITA - ESTILOS GENERALES
    Contiene colores, tipografía y configuración base
 ===================================================== */
-
 :root {
     color-scheme: light;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
 
-    --bg: #FFF8F0;                 /* Fondo General - Crema claro */
-    --bg-seccion: #ffffff;         /* Fondo Secciones - Blanco puro */
-    --card: #FFF8F0;               /* Fondo Tarjetas - Crema claro uniforme */
+    /* Nuevos Fondos Vivos y Limpios */
+    --bg: #f0f3ff;                 /* Fondo General - Azul sutil muy fresco y moderno */
+    --bg-seccion: #ffffff;         /* Fondo Secciones - Blanco puro para alto contraste */
+    --card: #f8fafc;               /* Fondo Tarjetas - Gris azulado ultra limpio */
     
-    /* Paleta de Marrones */
-    --brand-light: #C08552;        /* Marrón claro / Café con leche */
-    --brand-medium: #8C5A3C;       /* Marrón medio / Caramelo */
-    --brand-dark: #4B2E2B;         /* Marrón oscuro / Chocolate */
+    /* Nueva Paleta Eléctrica de Contraste */
+    --brand-light: #6366f1;        /* Índigo Eléctrico / Vivo para destacar */
+    --brand-medium: #4f46e5;       /* Azul Real Intenso para estados activos y enlaces */
+    --brand-dark: #0f172a;         /* Azul Oscuro Profundo (Casi negro) para textos principales */
     
-    /* Colores de Estado Solicitados */
-    --estado-rojo: #ff4d4d;        /* Pendiente */
-    --estado-verde: #2ec4b6;       /* Completada */
-    --estado-naranja: #ff9f1c;     /* En Proceso / Pendiente Extra */
+    /* Colores de Estado Solicitados (Vivos) */
+    --estado-rojo: #ff4d4d;        /* Pendiente / Eliminar */
+    --estado-verde: #00ddb3;       /* Completada (Un verde turquesa ultra vivo) */
+    --estado-naranja: #ff9f1c;     /* En proceso */
 }
-
 /* =====================================================
    CONFIGURACIÓN GENERAL
 ===================================================== */
@@ -426,7 +425,7 @@ textarea:focus {
 }
 
 .delete-button:hover {
-    background: #331f1d; 
+    background: #ff4d4d;
     transform: translateY(-1px);
 }
 

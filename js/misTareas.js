@@ -88,10 +88,24 @@ document.addEventListener("DOMContentLoaded", function () {
         return tarjeta
     }
 
+    // Limpiar filtros
+    function limpiarFiltros() {
+
+        buscador.value = ""
+
+        filtroCurso.value = ""
+
+        filtroEstado.value = "todos"
+
+
+        renderizarTareas(tareas)
+
+    }
+
     // Filtra el arreglo de tareas según los criterios seleccionados y redibuja la pantalla
     function renderizarTareas() {
         contenedorTareas.innerHTML = ""
-        
+
         const texto = buscador.value.toLowerCase()
         const cursoSel = filtroCurso.value
         const catSel = filtroCategoria.value
@@ -100,9 +114,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Aplica un método filter de orden superior para evaluar múltiples condiciones en simultáneo
         const filtradas = tareas.filter(function (t) {
             const desc = t.descripcion ? t.descripcion.toLowerCase() : ""
-            const cumpleBusqueda = t.nombre.toLowerCase().includes(texto) || 
-                                   t.curso.toLowerCase().includes(texto) || 
-                                   desc.includes(texto)
+            const cumpleBusqueda = t.nombre.toLowerCase().includes(texto) ||
+                t.curso.toLowerCase().includes(texto) ||
+                desc.includes(texto)
 
             const cumpleCurso = cursoSel === "" || t.curso === cursoSel
             const cumpleCat = catSel === "" || t.categoria === catSel
@@ -152,30 +166,87 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Actualiza el estado de una tarea específica en memoria y lo sincroniza en persistencia
     function cambiarEstadoTarea(id, nuevoEstado) {
-        for (let t of tareas) {
-            if (t.id === id) {
-                t.estado = nuevoEstado
-                break
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: "btn btn-success",
+                cancelButton: "btn btn-danger"
+            },
+            buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+            title: "¿Marcar como completada?",
+            text: "La tarea cambiará su estado a completada.",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonText: "Sí, completar",
+            cancelButtonText: "Cancelar",
+            reverseButtons: true
+        }).then((result) => {
+
+            if (result.isConfirmed) {
+
+                for (let t of tareas) {
+                    if (t.id === id) {
+                        t.estado = nuevoEstado
+                        break
+                    }
+                }
+
+                localStorage.setItem("tareas", JSON.stringify(tareas))
+                actualizarEstadisticas()
+                renderizarTareas()
+
+                swalWithBootstrapButtons.fire({
+                    title: "¡Completada!",
+                    text: "La tarea fue marcada como completada.",
+                    icon: "success"
+
+                })
             }
-        }
-        localStorage.setItem("tareas", JSON.stringify(tareas))
-        actualizarEstadisticas()
-        renderizarTareas()
+        })
     }
 
     // Remueve una tarea seleccionada del arreglo y refresca los componentes afectados
     function eliminarTarea(id) {
-        if (confirm("¿Estás seguro de eliminar esta tarea?")) {
-            // Genera un nuevo arreglo excluyendo el ID seleccionado
-            tareas = tareas.filter(function (t) {
-                return t.id !== id
-            })
-            // Sincroniza la remoción y actualiza toda la interfaz de usuario
-            localStorage.setItem("tareas", JSON.stringify(tareas))
-            actualizarEstadisticas()
-            extraerFiltrosUnicos()
-            renderizarTareas()
-        }
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: "btn btn-success",
+                cancelButton: "btn btn-danger"
+            },
+            buttonsStyling: false
+        })
+        swalWithBootstrapButtons.fire({
+            title: "¿Estás seguro?",
+            text: "Esta acción no se puede deshacer.",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Sí, eliminar",
+            cancelButtonText: "No, cancelar",
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                tareas = tareas.filter(function (t) {
+                    return t.id !== id
+                })
+                localStorage.setItem("tareas", JSON.stringify(tareas))
+                actualizarEstadisticas()
+                extraerFiltrosUnicos()
+                renderizarTareas()
+                swalWithBootstrapButtons.fire({
+                    title: "¡Eliminada!",
+                    text: "La tarea fue eliminada correctamente.",
+                    icon: "success"
+                })
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                swalWithBootstrapButtons.fire({
+                    title: "Cancelado",
+                    text: "La tarea sigue guardada.",
+                    icon: "error"
+                })
+            }
+        })
+
     }
 
     // Escuchadores de eventos interactivos para búsquedas y filtros en tiempo real

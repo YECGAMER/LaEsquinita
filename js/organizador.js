@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
               Swal.fire({
             title: "Incompleto",
             text: "Por favor completa los campos principales (Nombre, Curso y Fecha)",
-            icon: "success"
+            icon: "error"
             });
             return
         }
