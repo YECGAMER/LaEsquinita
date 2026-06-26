@@ -1,78 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="La Esquinita - Organiza tus tareas universitarias y controla tus entregas desde cualquier dispositivo." />
-    <meta name="keywords" content="tareas universitarias, organización, calendario, pendientes, localStorage, La Esquinita" />
+    <meta name="description"
+        content="La Esquinita - Organiza tus tareas universitarias y controla tus entregas desde cualquier dispositivo." />
+    <meta name="keywords"
+        content="tareas universitarias, organización, calendario, pendientes, localStorage, La Esquinita" />
     <link rel="stylesheet" href="css/styles.css">
     <title>La Esquinita | Inicio</title>
 </head>
+
 <body>
-<header>
-    <div class="container">
-        <div class="brand-header">
-            <img src="asset/images/logo2.5.png" alt="Logo La Esquinita" class="logo-img">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Inicio</a></li>
-                <li><a href="tareas.html">Tareas</a></li>
-                <li><a href="Organizador.html">Organizador</a></li>
-                <li><a href="misTareas.html">Mis tareas</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<main>
-    <section class="hero-section">
+    <header>
         <div class="container">
-            <h1>Bienvenido a La Esquinita</h1>
-            <p>La Esquinita es un sistema diseñado para estudiantes universitarios que necesitan organizar sus tareas y entregas de forma simple, visual y accesible.</p>
-            <div class="button-row">
-                <a class="button button-primary button-main-action" href="tareas.html">Ver tareas disponibles</a>
+            <div class="brand-header">
+                <img src="asset/images/logo2.5.png" alt="Logo La Esquinita" class="logo-img">
             </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="tareas.html">Tareas</a></li>
+                    <li><a href="Organizador.html">Organizador</a></li>
+                    <li><a href="misTareas.html">Mis tareas</a></li>
+                </ul>
+            </nav>
         </div>
-    </section>
-   <section class="testimonials-section">
-    <div class="container">
-        <h2>Lista de recomendaciones</h2>
-        
-        <div id="testimonials-container" class="testimonials-grid"></div>
-    </div>
-</section>
-    <section class="problem-section">
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h1>Bienvenido a La Esquinita</h1>
+                <p>La Esquinita es un sistema diseñado para estudiantes universitarios que necesitan organizar sus
+                    tareas y entregas de forma simple, visual y accesible.</p>
+                <div class="button-row">
+                    <a class="button button-primary button-main-action" href="tareas.html">Ver tareas disponibles</a>
+                </div>
+            </div>
+        </section>
+        <section class="testimonials-section">
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev-btn" id="carousel-prev" type="button">‹</button>
+
+                <div id="testimonials-container" class="testimonials-grid"></div>
+
+                <button class="carousel-btn next-btn" id="carousel-next" type="button">›</button>
+            </div>
+        </section>
+        <section class="problem-section">
+            <div class="container">
+                <h2>¿Qué busca resolver?</h2>
+                <p>El día a día estudiantil suele complicarse debido a la desorganización de fechas. Nuestro sistema
+                    soluciona directamente problemas como:</p>
+                <ul>
+                    <li>Olvidar fechas de entrega.</li>
+                    <li>No saber qué tareas ya están completas.</li>
+                    <li>Tener varios cursos y fechas mezcladas.</li>
+                    <li>Querer una herramienta sencilla sin funciones complicadas.</li>
+                </ul>
+            </div>
+        </section>
+        <section class="features-section">
+            <div class="container">
+                <h2>¿Qué ofrece el sistema?</h2>
+                <p>Para ayudarte a mantener el control de tu cuatrimestre o semestre, la plataforma te permite
+                    interactuar mediante:</p>
+                <ul>
+                    <li>Búsqueda instantánea de tareas.</li>
+                    <li>Filtros por curso y estado.</li>
+                    <li>Marcar tareas como completadas.</li>
+                    <li>Guardar tareas propias con localStorage.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
         <div class="container">
-            <h2>¿Qué busca resolver?</h2>
-            <p>El día a día estudiantil suele complicarse debido a la desorganización de fechas. Nuestro sistema soluciona directamente problemas como:</p>
-            <ul>
-                <li>Olvidar fechas de entrega.</li>
-                <li>No saber qué tareas ya están completas.</li>
-                <li>Tener varios cursos y fechas mezcladas.</li>
-                <li>Querer una herramienta sencilla sin funciones complicadas.</li>
-            </ul>
+            <p>Contacto: info@laesquinita.cr</p>
+            <p>© 2026 La Esquinita</p>
         </div>
-    </section>
-    <section class="features-section">
-        <div class="container">
-            <h2>¿Qué ofrece el sistema?</h2>
-            <p>Para ayudarte a mantener el control de tu cuatrimestre o semestre, la plataforma te permite interactuar mediante:</p>
-            <ul>
-                <li>Búsqueda instantánea de tareas.</li>
-                <li>Filtros por curso y estado.</li>
-                <li>Marcar tareas como completadas.</li>
-                <li>Guardar tareas propias con localStorage.</li>
-            </ul>
-        </div>
-    </section>
-</main>
-<footer>
-    <div class="container">
-        <p>Contacto: info@laesquinita.cr</p>
-        <p>© 2026 La Esquinita</p>
-    </div>
-</footer>
-<script src="js/inicio.js"></script>
-<script src="data/testimonios.json"></script>
+    </footer>
+    <script src="js/inicio.js"></script>
+    <script src="data/testimonios.json"></script>
 </body>
+
 </html>
