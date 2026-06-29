@@ -43,30 +43,35 @@
                 </div>
             </div>
         </section>
-        <section class="controls-grid">
-            <div class="control-card">
-                <label for="search-input">Buscar tareas</label>
-                <input id="search-input" type="search" placeholder="Busca por título, curso o palabra clave" autocomplete="off">
-            </div>
-            <div class="control-card">
-                <label for="course-filter">Filtrar por curso</label>
-                <select id="course-filter">
-                    <option value="">Todos los cursos</option>
-                </select>
-            </div>
-            <div class="control-card">
-                <label for="status-filter">Filtrar por estado</label>
-                <select id="status-filter">
-                    <option value="todos">Todos</option>
-                    <option value="pendiente">Pendientes</option>
-                    <option value="completada">Completadas</option>
-                </select>
-            </div>
-            <div class="control-card control-actions">
-                <p class="help-text">Los filtros se aplican al instante.</p>
-                <button class="button button-secondary button-limpiar-filtros" id="clear-filters" type="button">Limpiar filtros</button>
-            </div>
-        </section>
+       <section class="controls-grid">
+    <div class="control-card">
+        <label for="buscarTarea">Buscar tareas</label>
+        <input id="buscarTarea" type="search" placeholder="Buscar tarea" autocomplete="off">
+    </div>
+    <div class="control-card">
+        <label for="filtroCurso">Filtrar por curso</label>
+        <select id="filtroCurso">
+            <option value="">Todos los cursos</option>
+        </select>
+    </div>
+    <div class="control-card">
+        <label for="filtroCategoria">Filtrar por categoría</label>
+        <select id="filtroCategoria">
+            <option value="">Todas las categorías</option>
+        </select>
+    </div>
+    <div class="control-card">
+        <label for="filtroEstado">Filtrar por estado</label>
+        <select id="filtroEstado">
+            <option value="">Todos los estados</option>
+            <option value="pendiente">Pendientes</option>
+            <option value="completada">Completadas</option>
+        </select>
+    </div>
+    <div class="control-card control-actions">
+        <button class="button button-secondary button-limpiar-filtros" id="clear-filters" type="button">Limpiar filtros</button>
+    </div>
+</section>
         <section>
             <h2>Lista de tareas</h2>
             <div id="tasks-list" class="tasks-grid"></div>
@@ -80,6 +85,6 @@
         <p>© 2026 La Esquinita</p>
     </div>
 </footer>
-<script src="js/tereas.js"></script>
+<script src="js/tareas.js"></script>
 </body>
 </html>

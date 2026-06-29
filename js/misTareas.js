@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const filtroCurso = document.getElementById("filtroCurso")
     const filtroCategoria = document.getElementById("filtroCategoria")
     const filtroEstado = document.getElementById("filtroEstado")
+    const btnLimpiarFiltros = document.getElementById("clear-filters") // CAPTURADO CORRECCIÓN 2
 
     // Extrae cursos y categorías sin repetir para rellenar los selectores dinámicamente
     function extraerFiltrosUnicos() {
@@ -88,18 +89,13 @@ document.addEventListener("DOMContentLoaded", function () {
         return tarjeta
     }
 
-    // Limpiar filtros
+    // Limpiar filtros - CORRECCIÓN 3
     function limpiarFiltros() {
-
         buscador.value = ""
-
         filtroCurso.value = ""
-
-        filtroEstado.value = "todos"
-
-
-        renderizarTareas(tareas)
-
+        filtroCategoria.value = ""
+        filtroEstado.value = "" // Alineado con el valor de las opciones vacías del HTML
+        renderizarTareas()
     }
 
     // Filtra el arreglo de tareas según los criterios seleccionados y redibuja la pantalla
@@ -109,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const texto = buscador.value.toLowerCase()
         const cursoSel = filtroCurso.value
         const catSel = filtroCategoria.value
-        const estadoSel = filtroEstado.value.toLowerCase()
+        const estadoSel = filtroEstado.value // CORRECCIÓN 4 (Mantiene mayúsculas/minúsculas del select)
 
         // Aplica un método filter de orden superior para evaluar múltiples condiciones en simultáneo
         const filtradas = tareas.filter(function (t) {
@@ -120,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const cumpleCurso = cursoSel === "" || t.curso === cursoSel
             const cumpleCat = catSel === "" || t.categoria === catSel
-            const cumpleEstado = estadoSel === "" || t.estado.toLowerCase() === estadoSel
+            const cumpleEstado = estadoSel === "" || t.estado === estadoSel
 
             return cumpleBusqueda && cumpleCurso && cumpleCat && cumpleEstado
         })
@@ -159,9 +155,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Renderizado directo de los totales calculados
-        total.textContent = tareas.length
-        completadas.textContent = cantidadCompletadas
-        pendientes.textContent = cantidadPendientes
+        if(total) total.textContent = tareas.length
+        if(completadas) completadas.textContent = cantidadCompletadas
+        if(pendientes) pendientes.textContent = cantidadPendientes
     }
 
     // Actualiza el estado de una tarea específica en memoria y lo sincroniza en persistencia
@@ -183,9 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
             cancelButtonText: "Cancelar",
             reverseButtons: true
         }).then((result) => {
-
             if (result.isConfirmed) {
-
                 for (let t of tareas) {
                     if (t.id === id) {
                         t.estado = nuevoEstado
@@ -201,7 +195,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     title: "¡Completada!",
                     text: "La tarea fue marcada como completada.",
                     icon: "success"
-
                 })
             }
         })
@@ -246,7 +239,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 })
             }
         })
-
     }
 
     // Escuchadores de eventos interactivos para búsquedas y filtros en tiempo real
@@ -254,6 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
     filtroCurso.addEventListener("change", renderizarTareas)
     filtroCategoria.addEventListener("change", renderizarTareas)
     filtroEstado.addEventListener("change", renderizarTareas)
+    btnLimpiarFiltros.addEventListener("click", limpiarFiltros) // CONECTADO CORRECCIÓN 2
 
     // Inicialización de las funciones core al levantar el archivo por primera vez
     extraerFiltrosUnicos()

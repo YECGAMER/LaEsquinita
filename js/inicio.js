@@ -51,23 +51,23 @@ document.addEventListener("DOMContentLoaded", function () {
         setupControls: function() {
             // Control Siguiente: Agarra la primera tarjeta y la manda al final
             if (this.carouselOptions.includes('next')) {
-                btnNext.addEventListener("click", () => {
+                btnNext.addEventListener("click", function() {
                     const primeraTarjeta = gridContenedor.querySelector(".custom-recommendation-card");
                     if (primeraTarjeta) {
                         gridContenedor.appendChild(primeraTarjeta); // Mueve la primera al final del contenedor
                     }
-                });
+                }.bind(this)); // Asegura que 'this' apunte a miCarrusel si es necesario expandir la lógica
             }
 
             // Control Anterior: Agarra la última tarjeta y la mete al puro inicio
             if (this.carouselOptions.includes('previous')) {
-                btnPrev.addEventListener("click", () => {
+                btnPrev.addEventListener("click", function() {
                     const tarjetas = gridContenedor.querySelectorAll(".custom-recommendation-card");
                     if (tarjetas.length > 0) {
                         const ultimaTarjeta = tarjetas[tarjetas.length - 1];
                         gridContenedor.insertBefore(ultimaTarjeta, gridContenedor.firstChild); // La mete de primera
                     }
-                });
+                }.bind(this)); // Mantiene el contexto de diseño cohesivo
             }
         }
     };

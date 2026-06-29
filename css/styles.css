@@ -7,25 +7,25 @@
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
 
-    /* Nuevos Fondos Vivos y Limpios */
-    --bg: #f0f3ff;                 /* Fondo General - Azul sutil muy fresco y moderno */
-    --bg-seccion: #ffffff;         /* Fondo Secciones - Blanco puro para alto contraste */
+    /* Fondos Vivos, Limpios y Contraste de Bloques */
+    --bg: #f0f3ff;                 /* Fondo General - Azul sutil fresco y moderno */
+    --bg-seccion: #ffffff;         /* Fondo Secciones - Blanco puro estricto para alto contraste */
     --card: #f8fafc;               /* Fondo Tarjetas - Gris azulado ultra limpio */
     
-    /* Nueva Paleta Eléctrica de Contraste */
+    /* Paleta Eléctrica de Contraste */
     --brand-light: #6366f1;        /* Índigo Eléctrico / Vivo para destacar */
     --brand-medium: #4f46e5;       /* Azul Real Intenso para estados activos y enlaces */
-    --brand-dark: #0f172a;         /* Azul Oscuro Profundo (Casi negro) para textos principales */
+    --brand-dark: #0f172a;         /* Azul Oscuro Profundo para textos principales */
     
-    /* Colores de Estado Solicitados (Vivos) */
+    /* Colores de Estado Solicitados (Vibrantes para Chips y Acciones) */
     --estado-rojo: #ff4d4d;        /* Pendiente / Eliminar */
-    --estado-verde: #00ddb3;       /* Completada (Un verde turquesa ultra vivo) */
-    --estado-naranja: #ff9f1c;     /* En proceso */
+    --estado-verde: #00ddb3;       /* Completada (Verde turquesa ultra vivo) */
+    --estado-naranja: #ff9f1c;     /* En proceso / Pendiente aparte */
 }
+
 /* =====================================================
    CONFIGURACIÓN GENERAL
 ===================================================== */
-
 * {
     box-sizing: border-box;
 }
@@ -45,7 +45,6 @@ body {
 /* =====================================================
    ENCABEZADO Y MENÚ PRINCIPAL
 ===================================================== */
-
 header {
     background: var(--bg-seccion);
     color: var(--brand-light);
@@ -94,6 +93,12 @@ nav a:focus {
     color: var(--brand-light);
 }
 
+/* Enlace activo de navegación */
+nav a.active {
+    color: var(--brand-medium);
+    border-bottom: 2px solid var(--brand-medium);
+}
+
 /* =====================================================
    CONTENIDO PRINCIPAL
 ===================================================== */
@@ -103,7 +108,7 @@ main {
     padding: 32px 20px 48px;
 }
 
-/* Cada sección del sitio */
+/* Cada sección del sitio con fondo blanco estricto */
 section {
     background: var(--bg-seccion);
     border: 1px solid var(--brand-light);
@@ -114,9 +119,7 @@ section {
 }
 
 /* Títulos */
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     color: var(--brand-dark);
     margin-top: 0;
 }
@@ -140,9 +143,7 @@ p {
 /* =====================================================
    BOTONES GENERALES DEL SISTEMA
 ===================================================== */
-.button,
-button,
-a.button {
+.button, button, a.button {
     display: inline-block;
     padding: 0.95rem 1.6rem;
     border-radius: 999px;
@@ -153,18 +154,16 @@ a.button {
 }
 
 /* Botón principal */
-.button-primary,
-#btnAgregarTarea {
+.button-primary, #btnAgregarTarea {
     background: var(--brand-light);
     color: #e4f1ff;
     border: none;
 }
 
-.button-primary:hover,
-#btnAgregarTarea:hover {
+.button-primary:hover, #btnAgregarTarea:hover {
     background: var(--brand-medium);
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px #e4f1ff;
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
 }
 
 /* Botón secundario */
@@ -183,7 +182,6 @@ a.button {
 /* =====================================================
    TARJETAS DE ESTADÍSTICAS
 ===================================================== */
-
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(160px, 1fr));
@@ -199,9 +197,8 @@ a.button {
 }
 
 /* =====================================================
-   TARJETAS DE TAREAS
+   TARJETAS DE TAREAS GENERALES
 ===================================================== */
-
 .tasks-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -241,9 +238,8 @@ a.button {
 }
 
 /* =====================================================
-   ESTADOS DE LAS TAREAS (CHIPS)
+   ESTADOS DE LAS TAREAS (CHIPS SARRADOS A VARIABLES VIVAS)
 ===================================================== */
-
 .status-chip {
     display: inline-flex;
     padding: 8px 12px;
@@ -252,18 +248,25 @@ a.button {
     font-weight: 700;
 }
 
-/* Rojo para pendiente */
+/* Rojo vivo para pendiente */
 .status-pendiente {
-    background: rgba(255, 77, 77, 0.15);
+    background: rgba(255, 77, 77, 0.12);
     color: var(--estado-rojo);
     border: 1px solid rgba(255, 77, 77, 0.3);
 }
 
-/* Verde para completada */
+/* Verde vivo para completada */
 .status-completada {
-    background: rgba(46, 196, 182, 0.15);
+    background: rgba(0, 221, 179, 0.12);
     color: var(--estado-verde);
-    border: 1px solid rgba(46, 196, 182, 0.3);
+    border: 1px solid rgba(0, 221, 179, 0.3);
+}
+
+/* Naranja vivo para en proceso / pendiente aparte */
+.status-proceso {
+    background: rgba(255, 159, 28, 0.12);
+    color: var(--estado-naranja);
+    border: 1px solid rgba(255, 159, 28, 0.3);
 }
 
 /* =====================================================
@@ -295,9 +298,7 @@ a.button {
     color: var(--brand-dark);
 }
 
-input,
-select,
-textarea {
+input, select, textarea {
     width: 100%;
     padding: 14px 16px;
     border: 1px solid var(--brand-light);
@@ -313,17 +314,14 @@ textarea {
     resize: vertical;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
+input:focus, select:focus, textarea:focus {
     outline: 2px solid var(--brand-light);
-    box-shadow: 0 0 8px #f8fafc;
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.15);
 }
 
 /* =====================================================
-   VISTA PREVIA
+   VISTA PREVIA DEL FORMULARIO
 ===================================================== */
-
 .task-preview {
     background: var(--card);
     border-radius: 22px;
@@ -345,7 +343,6 @@ textarea:focus {
 /* =====================================================
    FILTROS DE MIS TAREAS
 ===================================================== */
-
 .filters-horizontal {
     display: flex;
     gap: 15px;
@@ -358,41 +355,37 @@ textarea:focus {
     flex: 1;
     min-width: 180px;
 }
-/* =====================================================
-   FILTROS DE TAREAS GENERALES (.controls-grid)
-===================================================== */
 
-/* El contenedor principal de los filtros */
+/* =====================================================
+   CONTROLES DE FILTROS EN TAREAS GENERALES
+===================================================== */
 .controls-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 16px;
     width: 100%;
-    align-items: flex-end; /* Alinea los inputs y el botón por abajo */
+    align-items: flex-end; 
     margin-top: 15px;
 }
 
-/* Cada tarjeta interna que sostiene el label y el input */
 .control-card {
     display: flex;
     flex-direction: column;
-    gap: 8px; /* Separa el label del input para que no estén pegados */
+    gap: 8px; 
     width: 100%;
 }
 
-/* Estilo para las etiquetas de texto (Buscar tareas, Filtrar por...) */
 .control-card label {
     font-weight: 600;
     font-size: 0.9rem;
     color: var(--brand-dark);
 }
 
-/* Aplicamos tu paleta viva y bordes redondeados a los inputs y selects de esta sección */
 .control-card input,
 .control-card select {
     width: 100%;
-    height: 46px;                  /* Altura estandarizada */
-    padding: 10px 16px;            /* Espacio interno para las letras */
+    height: 46px;                  
+    padding: 10px 16px;            
     border: 1px solid var(--brand-light);
     border-radius: 12px;
     background-color: var(--card);
@@ -403,7 +396,6 @@ textarea:focus {
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-/* Efecto al hacer clic o escribir */
 .control-card input:focus,
 .control-card select:focus {
     outline: none;
@@ -411,7 +403,6 @@ textarea:focus {
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
 
-/* La última tarjeta que tiene el texto de ayuda y el botón */
 .control-actions {
     display: flex;
     flex-direction: column;
@@ -421,10 +412,9 @@ textarea:focus {
 .control-actions .help-text {
     font-size: 0.85rem;
     color: var(--brand-medium);
-    margin: 0 0 4px 0; /* Despega ligeramente el texto descriptivo del botón */
+    margin: 0 0 4px 0; 
 }
 
-/* Forzar que el botón de limpiar filtros mida lo mismo que los inputs */
 .button-limpiar-filtros {
     width: 100%;
     height: 46px;
@@ -432,9 +422,8 @@ textarea:focus {
 }
 
 /* =====================================================
-   TARJETAS GENERADAS DESDE JAVASCRIPT
+   TARJETAS GENERADAS DESDE JAVASCRIPT ("MIS TAREAS")
 ===================================================== */
-
 .user-task-card {
     background: var(--card);
     border-radius: 18px;
@@ -453,9 +442,8 @@ textarea:focus {
 }
 
 /* =====================================================
-   BOTONES DENTRO DE LAS TAREAS
+   BOTONES INTERNOS DE ACCIÓN EN TAREAS PERSONALIZADAS
 ===================================================== */
-
 .task-buttons {
     display: flex;
     gap: 10px;
@@ -478,9 +466,10 @@ textarea:focus {
     transform: translateY(-1px);
 }
 
+/* Botón Eliminar Corregido: Nace rojo vivo */
 .delete-button {
-    background: var(--brand-dark);
-    color: #f8fafcF0;
+    background: var(--estado-rojo);
+    color: #ffffff;
     border: none;
     padding: 10px 18px;
     border-radius: 999px;
@@ -490,14 +479,11 @@ textarea:focus {
 }
 
 .delete-button:hover {
-    background: #ff4d4d;
+    background: #cc3333; /* Matiz rojo oscuro para simular profundidad */
     transform: translateY(-1px);
 }
 
-/* =====================================================
-   MENSAJE CUANDO NO EXISTEN TAREAS
-===================================================== */
-
+/* MENSAJE CUANDO NO EXISTEN REGISTROS */
 .empty-state {
     margin-top: 14px;
     color: var(--brand-medium);
@@ -516,47 +502,11 @@ footer {
 }
 
 /* =====================================================
-   DISEÑO RESPONSIVO
-===================================================== */
-
-@media(max-width:840px){
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-    .task-layout {
-        grid-template-columns: 1fr;
-    }
-    .tasks-calendar-layout {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media(max-width:640px){
-    header .container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .logo-img {
-        width: 180px;
-    }
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
-    .filters-horizontal {
-        flex-direction: column;
-    }
-    .filters-horizontal select,
-    .filters-horizontal input {
-        width: 100%;
-    }
-}
-/* =====================================================
-   SECCIÓN DE TESTIMONIOS / RECOMENDACIONES (ESTABLE Y FIJO)
+   SECCIÓN DE TESTIMONIOS Y RECOMENDACIONES (CARRUSEL)
 ===================================================== */
 .testimonials-section {
     padding: 30px 0;
-    background-color: var(--bg);
+    background-color: var(--bg-seccion) !important; /* Forzar fondo blanco estricto */
 }
 
 .testimonials-section h2 {
@@ -565,33 +515,34 @@ footer {
     margin-bottom: 20px;
 }
 
-/* Envoltura del carrusel para posicionar las flechas */
 .carousel-wrapper {
     position: relative;
     width: 100%;
     display: block;
+    background-color: var(--bg-seccion) !important;
 }
 
-/* Contenedor horizontal que oculta la barra de scroll */
 .testimonials-grid {
     display: flex;
-    flex-wrap: nowrap !important; /* Fuerza una sola línea horizontal */
+    flex-wrap: nowrap !important; /* Asegura una sola fila rígida horizontal */
     gap: 15px;
     padding: 15px 5px;
     overflow-x: auto;
     scroll-behavior: smooth;
-    scrollbar-width: none; /* Oculta en Firefox */
+    background-color: var(--bg-seccion) !important;
+    
+    /* Ocultar barra de scroll nativa en navegadores */
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
 }
 
 .testimonials-grid::-webkit-scrollbar {
-    display: none !important; /* Oculta en Chrome, Safari y Edge */
+    display: none !important;
 }
 
-/* =====================================================
-   TARJETAS: Forzamos el tamaño pequeño original (250px)
-===================================================== */
+/* TARJETAS DEL CARRUSEL: Congeladas a 250px para celulares */
 .custom-recommendation-card {
-    background: var(--bg-seccion, #ffffff);
+    background: var(--bg-seccion);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
@@ -600,12 +551,11 @@ footer {
     flex-direction: column;
     position: relative;
     
-    /* Bloqueo estricto de tamaño para que no se hagan gigantes */
+    /* Bloqueo estricto responsivo */
     flex: 0 0 250px !important;
     width: 250px !important;
     min-width: 250px !important;
     max-width: 250px !important;
-    
     transition: transform 0.2s ease;
 }
 
@@ -614,21 +564,19 @@ footer {
     border-color: var(--brand-medium);
 }
 
-/* Contenedor de la foto dentro de la tarjeta */
 .card-image-wrapper {
     position: relative;
     width: 100% !important;
-    height: 120px !important; /* Altura fija original */
+    height: 120px !important;
     min-height: 120px !important;
     max-height: 120px !important;
     overflow: hidden;
 }
 
-/* Forzamos a la imagen gigante a encajar perfectamente aquí adentro */
 .card-image-wrapper img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important;
+    object-fit: cover !important; /* Ajuste perfecto de fotos */
 }
 
 .status-badge-floating {
@@ -644,13 +592,12 @@ footer {
     z-index: 2;
 }
 
-/* Cuerpo del texto */
 .card-content-body {
     padding: 14px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    background: var(--bg-seccion, #ffffff);
+    background: var(--bg-seccion);
 }
 
 .card-comment-text {
@@ -680,56 +627,12 @@ footer {
     margin: 0;
 }
 
-/* =====================================================
-   SECCIÓN DE TESTIMONIOS / RECOMENDACIONES (CARRUSEL)
-===================================================== */
-.testimonials-section {
-    padding: 30px 0;
-    background-color: #ffffff !important; /* <--- AQUÍ: Forzamos blanco puro en TODO el contenedor grande */
-}
-
-.testimonials-section h2 {
-    text-align: center;
-    color: var(--brand-dark);
-    margin-bottom: 20px;
-}
-
-/* Envoltura principal para contener las flechas flotantes */
-.carousel-wrapper {
-    position: relative;
-    width: 100%;
-    display: block;
-    background-color: #ffffff !important; /* Asegura blanco en la envoltura */
-}
-
-/* Contenedor de la tira horizontal de tarjetas */
-.testimonials-grid {
-    display: flex;
-    flex-wrap: nowrap !important; 
-    gap: 15px;
-    padding: 15px 5px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    background-color: #ffffff !important; /* Asegura blanco detrás de la tira */
-    
-    /* Ocultar barra de scroll en Firefox y Edge antiguo */
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
-}
-
-/* Ocultar barra de scroll en Chrome, Safari y Edge Moderno */
-.testimonials-grid::-webkit-scrollbar {
-    display: none !important;
-}
-
-/* =====================================================
-   BOTONES DE NAVEGACIÓN (FLECHAS FLOTANTES)
-===================================================== */
+/* FLECHAS FLOTANTES DEL CARRUSEL */
 .carousel-btn {
     position: absolute;
-    top: 50%;                    /* Baja el botón al centro de la tarjeta */
-    transform: translateY(-50%); /* Ajuste geométrico perfecto */
-    background: var(--brand-light, #6366f1);
+    top: 50%;                    
+    transform: translateY(-50%); 
+    background: var(--brand-light);
     color: white;
     border: none;
     width: 42px;
@@ -742,26 +645,56 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: background-color 0.2s, transform 0.2s;
 }
 
 .carousel-btn:hover {
-    background: var(--brand-medium, #4f46e5);
+    background: var(--brand-medium);
     transform: translateY(-50%) scale(1.1);
 }
 
-/* Posicionamiento por fuera de los bordes laterales */
-.prev-btn {
-    left: -20px;
+.prev-btn { left: -20px; }
+.next-btn { right: -20px; }
+
+/* =====================================================
+   DISEÑO RESPONSIVO (QUERIES DE ADAPTACIÓN PARA MÓVILES)
+===================================================== */
+@media(max-width:840px){
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .task-layout {
+        grid-template-columns: 1fr;
+    }
+    .tasks-calendar-layout {
+        grid-template-columns: 1fr;
+    }
 }
 
-.next-btn {
-    right: -20px;
-}
-
-/* Ajuste responsivo para que no se corten en pantallas de teléfonos */
-@media (max-width: 768px) {
+@media(max-width:768px) {
+    /* Mueve las flechas adentro para que no se desborden de la pantalla del celular */
     .prev-btn { left: 2px; }
     .next-btn { right: 2px; }
+}
+
+@media(max-width:640px){
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .logo-img {
+        width: 180px;
+    }
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    .filters-horizontal {
+        flex-direction: column;
+    }
+    .filters-horizontal select,
+    .filters-horizontal input {
+        width: 100%;
+    }
 }

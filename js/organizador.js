@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Cargar la lista inicial desde localStorage o crear un arreglo vacío si no existe
     let listaTareas = JSON.parse(localStorage.getItem("tareas")) || []
 
+    // Obtener el formulario completo
+    const formOrganizador = document.getElementById("formOrganizador")
+
     // Obtener elementos del formulario
     const nombreTarea = document.getElementById("nombreTarea")
     const curso = document.getElementById("curso")
@@ -13,11 +16,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Elementos de salida
     const vistaPrevia = document.getElementById("vistaPreviaTarea")
-    const btnAgregarTarea = document.getElementById("btnAgregarTarea")
+
+    // Bloquear fechas pasadas en el calendario ---
+    function restringirFechasPasadas() {
+        const hoy = new Date()
+        const anio = hoy.getFullYear()
+        // Los meses van de 0 a 11, por lo que sumamos 1 y rellenamos con un cero a la izquierda si es menor a 10
+        const mes = String(hoy.getMonth() + 1).padStart(2, '0')
+        const dia = String(hoy.getDate()).padStart(2, '0')
+        
+        // Formato final requerido por el input date: YYYY-MM-DD
+        const fechaMinima = `${anio}-${mes}-${dia}`
+        
+        // Asignar el atributo mínimo al input
+        fechaEntrega.min = fechaMinima
+    }
 
     // Función para mostrar la vista previa reactiva en tiempo real
     function mostrarVistaPrevia() {
-        // Validación visual inicial por si todo está completamente en blanco
         if (!nombreTarea.value && !curso.value && !categoria.value && !fechaEntrega.value && !descripcion.value) {
             vistaPrevia.innerHTML = `
                 <h3>Vista previa</h3>
@@ -46,14 +62,30 @@ document.addEventListener("DOMContentLoaded", function () {
         campo.addEventListener("change", mostrarVistaPrevia)
     })
 
-    // Guardar la tarea de forma persistente
-    btnAgregarTarea.addEventListener("click", function () {
+    // Guardar la tarea de forma persistente capturando el evento submit del formulario
+    formOrganizador.addEventListener("submit", function (evento) {
+        evento.preventDefault()
+
         // Validación de datos básica antes de almacenar
         if (!nombreTarea.value || !curso.value || !fechaEntrega.value) {
-              Swal.fire({
-            title: "Incompleto",
-            text: "Por favor completa los campos principales (Nombre, Curso y Fecha)",
-            icon: "error"
+            Swal.fire({
+                title: "Incompleto",
+                text: "Por favor completa los campos principales (Nombre, Curso y Fecha)",
+                icon: "error"
+            });
+            return
+        }
+
+        // Validación de seguridad extra por si el usuario altera el HTML manual
+        const fechaSeleccionada = new Date(fechaEntrega.value + "T00:00:00")
+        const hoy = new Date()
+        hoy.setHours(0,0,0,0)
+
+        if (fechaSeleccionada < hoy) {
+            Swal.fire({
+                title: "Fecha Inválida",
+                text: "No puedes registrar tareas con fechas de entrega pasadas.",
+                icon: "error"
             });
             return
         }
@@ -95,6 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mostrarVistaPrevia()
     }
 
-    // Dibujar el estado inicial
+    // Inicializar restricciones y estado visual
+    restringirFechasPasadas()
     mostrarVistaPrevia()
 })

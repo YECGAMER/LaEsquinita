@@ -17,7 +17,7 @@
     "descripcion": "Crear los prototipos de las pantallas principales del sistema web.",
     "fechaEntrega": "2026-06-18",
     "prioridad": "Media",
-    "estado": "En progreso"
+    "estado": "Pendiente"
   },
   {
     "id": 3,
@@ -47,7 +47,7 @@
     "descripcion": "Crear un programa utilizando clases, objetos y métodos en Java.",
     "fechaEntrega": "2026-06-28",
     "prioridad": "Alta",
-    "estado": "En progreso"
+    "estado": "Pendiente"
   },
   {
     "id": 6,
@@ -67,7 +67,7 @@
     "descripcion": "Diseñar el diagrama entidad-relación para el sistema de control de inventarios.",
     "fechaEntrega": "2026-06-24",
     "prioridad": "Alta",
-    "estado": "En progreso"
+    "estado": "Pendiente"
   },
   {
     "id": 8,
