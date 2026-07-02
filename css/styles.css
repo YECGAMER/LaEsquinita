@@ -95,7 +95,7 @@ header .container {
 nav ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 32px;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -232,6 +232,10 @@ a.button {
     background: #e4f1ff;
     color: var(--brand-dark);
     transform: translateY(-2px);
+}
+
+.button-row {
+    margin-top: 28px;
 }
 
 /* =====================================================
