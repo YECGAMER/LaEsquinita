@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="La Esquinita - Sistema de organización de tareas universitarias con filtros y almacenamiento local." />
+    <meta name="description"
+        content="La Esquinita - Sistema de organización de tareas universitarias con filtros y almacenamiento local." />
     <meta name="keywords" content="tareas universitarias, organizar, localStorage, filtros, búsqueda" />
     <link rel="stylesheet" href="css/styles.css">
     <title>La Esquinita | Mis Tareas</title>
 </head>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <body>
     <header>
         <div class="container">
             <div class="brand-header">
-               <img src="asset/images/logo2.5.png" alt="Logo La Esquinita" class="logo-img">
+                <img src="asset/images/letrasLogo.png" alt="Logo La Esquinita" class="logo-img">
             </div>
+
+            <!-- Checkbox oculto que controla el menú -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+            <!-- Botón visual del menú hamburguesa -->
+            <label for="menu-toggle" class="menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
             <nav>
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
@@ -48,25 +60,34 @@
                 </div>
             </section>
 
-            <section>
-                <h2>Filtros</h2>
-                <div class="filters-horizontal">
+            <section class="controls-grid">
+                <div class="control-card">
+                    <label for="buscarTarea">Buscar tareas</label>
+                    <input id="buscarTarea" type="search" placeholder="Buscar tarea" autocomplete="off">
+                </div>
+                <div class="control-card">
+                    <label for="filtroCurso">Filtrar por curso</label>
                     <select id="filtroCurso">
                         <option value="">Todos los cursos</option>
                     </select>
-
+                </div>
+                <div class="control-card">
+                    <label for="filtroCategoria">Filtrar por categoría</label>
                     <select id="filtroCategoria">
                         <option value="">Todas las categorías</option>
                     </select>
-
+                </div>
+                <div class="control-card">
+                    <label for="filtroEstado">Filtrar por estado</label>
                     <select id="filtroEstado">
                         <option value="">Todos los estados</option>
                         <option value="Pendiente">Pendiente</option>
                         <option value="Completada">Completada</option>
                     </select>
-
-                    <input type="text" id="buscarTarea" placeholder="Buscar tarea">
-                    <button class="button button-secondary button-limpiar-filtros" id="clear-filters" type="button">Limpiar filtros</button>
+                </div>
+                <div class="control-card control-actions">
+                    <button class="button button-secondary button-limpiar-filtros" id="clear-filters"
+                        type="button">Limpiar filtros</button>
                 </div>
             </section>
 
@@ -86,4 +107,5 @@
     </footer>
     <script src="js/misTareas.js"></script>
 </body>
+
 </html>

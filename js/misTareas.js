@@ -105,8 +105,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const texto = buscador.value.toLowerCase()
         const cursoSel = filtroCurso.value
         const catSel = filtroCategoria.value
-        const estadoSel = filtroEstado.value // CORRECCIÓN 4 (Mantiene mayúsculas/minúsculas del select)
-
+        const estadoSel = filtroEstado.value 
+        
         // Aplica un método filter de orden superior para evaluar múltiples condiciones en simultáneo
         const filtradas = tareas.filter(function (t) {
             const desc = t.descripcion ? t.descripcion.toLowerCase() : ""

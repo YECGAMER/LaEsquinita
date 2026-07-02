@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="La Esquinita - Organizador de tareas universitarias con filtros, búsqueda y calendario." />
+    <meta name="description"
+        content="La Esquinita - Organizador de tareas universitarias con filtros, búsqueda y calendario." />
     <link rel="stylesheet" href="css/styles.css">
     <title>La Esquinita | Organizador</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <body>
-    <header>
-        <div class="container">
-            <div class="brand-header">
-               <img src="asset/images/logo2.5.png" alt="Logo La Esquinita" class="logo-img">
-            </div>
+     <header> 
+    <div class="container">
+        <div class="brand-header">
+            <img src="asset/images/letrasLogo.png" alt="Logo La Esquinita" class="logo-img">
+        </div>
+
+        <!-- Checkbox oculto que controla el menú -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+        <!-- Botón visual del menú hamburguesa -->
+        <label for="menu-toggle" class="menu-button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
             <nav>
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
@@ -24,72 +36,73 @@
             </nav>
         </div>
     </header>
-<main>
-    <div class="container">
-        <section>
-            <h1>Organizador de tareas</h1>
-            <p>Gestiona tus entregas con opciones claras para agregar y planificar tus próximas asignaciones.</p>
-        </section>
-        <section>
-            <h2>Agregar nueva tarea</h2>
-            <div class="task-layout">
-                <form class="task-form" id="formOrganizador">
-                    <div class="form-group">
-                        <label for="nombreTarea">Nombre de la tarea</label>
-                        <input type="text" id="nombreTarea" placeholder="Ejemplo: Investigación de redes">
-                    </div>
-                    <div class="form-group">
-                        <label for="curso">Curso</label>
-                        <input type="text" id="curso" placeholder="Ejemplo: Programación Web">
-                    </div>
-                    <div class="form-group">
-                        <label for="categoria">Categoría</label>
-                        <select id="categoria">
-                            <option value="">Seleccione</option>
-                            <option value="Proyecto">Proyecto</option>
-                            <option value="Tarea">Tarea</option>
-                            <option value="Examen">Examen</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="fechaEntrega">Fecha de entrega</label>
-                        <input type="date" id="fechaEntrega">
-                    </div>
-                    <div class="form-group">
-                        <label for="prioridad">Prioridad</label>
-                        <select id="prioridad">
-                            <option value="Alta">Alta</option>
-                            <option value="Media">Media</option>
-                            <option value="Baja">Baja</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="estado">Estado</label>
-                        <select id="estado">
-                            <option value="Pendiente">Pendiente</option>
-                            <option value="Completada">Completada</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="descripcion">Descripción</label>
-                        <textarea id="descripcion" placeholder="Detalles de la tarea"></textarea>
-                    </div>
-                    <button type="submit" id="btnAgregarTarea">Agregar tarea</button>
-                </form>
-                <article id="vistaPreviaTarea" class="task-preview">
-                    <h3>Vista previa</h3>
-                    <p>Complete el formulario para visualizar la tarea.</p>
-                </article>
-            </div>
-        </section>
-    </div>
-</main>
-<footer>
-    <div class="container">
-        <p>Contacto: info@laesquinita.cr</p>
-        <p>© 2026 La Esquinita</p>
-    </div>
-</footer>
-<script src="js/organizador.js"></script>
+    <main>
+        <div class="container">
+            <section>
+                <h1>Organizador de tareas</h1>
+                <p>Gestiona tus entregas con opciones claras para agregar y planificar tus próximas asignaciones.</p>
+            </section>
+            <section>
+                <h2>Agregar nueva tarea</h2>
+                <div class="task-layout">
+                    <form class="task-form" id="formOrganizador">
+                        <div class="form-group">
+                            <label for="nombreTarea">Nombre de la tarea</label>
+                            <input type="text" id="nombreTarea" placeholder="Ejemplo: Investigación de redes">
+                        </div>
+                        <div class="form-group">
+                            <label for="curso">Curso</label>
+                            <input type="text" id="curso" placeholder="Ejemplo: Programación Web">
+                        </div>
+                        <div class="form-group">
+                            <label for="categoria">Categoría</label>
+                            <select id="categoria">
+                                <option value="">Seleccione</option>
+                                <option value="Proyecto">Proyecto</option>
+                                <option value="Tarea">Tarea</option>
+                                <option value="Examen">Examen</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaEntrega">Fecha de entrega</label>
+                            <input type="date" id="fechaEntrega">
+                        </div>
+                        <div class="form-group">
+                            <label for="prioridad">Prioridad</label>
+                            <select id="prioridad">
+                                <option value="Alta">Alta</option>
+                                <option value="Media">Media</option>
+                                <option value="Baja">Baja</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <select id="estado">
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="Completada">Completada</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcion">Descripción</label>
+                            <textarea id="descripcion" placeholder="Detalles de la tarea"></textarea>
+                        </div>
+                        <button type="submit" id="btnAgregarTarea">Agregar tarea</button>
+                    </form>
+                    <article id="vistaPreviaTarea" class="task-preview">
+                        <h3>Vista previa</h3>
+                        <p>Complete el formulario para visualizar la tarea.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>Contacto: info@laesquinita.cr</p>
+            <p>© 2026 La Esquinita</p>
+        </div>
+    </footer>
+    <script src="js/organizador.js"></script>
 </body>
+
 </html>
