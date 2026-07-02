@@ -7,17 +7,17 @@
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
 
-    /* Fondos Vivos, Limpios y Contraste de Bloques */
-    --bg: #f0f3ff;                 /* Fondo General - Azul sutil fresco y moderno */
-    --bg-seccion: #ffffff;         /* Fondo Secciones - Blanco puro estricto para alto contraste */
+    /* Fondos Vivos y Limpios */
+    --bg: #f0f3ff;                 /* Fondo General - Azul sutil muy fresco y moderno */
+    --bg-seccion: #ffffff;         /* Fondo Secciones - Blanco puro para alto contraste */
     --card: #f8fafc;               /* Fondo Tarjetas - Gris azulado ultra limpio */
     
     /* Paleta Eléctrica de Contraste */
     --brand-light: #6366f1;        /* Índigo Eléctrico / Vivo para destacar */
     --brand-medium: #4f46e5;       /* Azul Real Intenso para estados activos y enlaces */
-    --brand-dark: #0f172a;         /* Azul Oscuro Profundo para textos principales */
+    --brand-dark: #0f172a;         /* Azul Oscuro Profundo (Casi negro) para textos principales */
     
-    /* Colores de Estado Solicitados (Vibrantes para Chips y Acciones) */
+    /* Colores de Estado Solicitados (Vivos y Vibrantes) */
     --estado-rojo: #ff4d4d;        /* Pendiente / Eliminar */
     --estado-verde: #00ddb3;       /* Completada (Verde turquesa ultra vivo) */
     --estado-naranja: #ff9f1c;     /* En proceso / Pendiente aparte */
@@ -197,7 +197,7 @@ p {
 }
 
 /* =====================================================
-   TARJETAS DE TAREAS GENERALES
+   TARJETAS DE TAREAS
 ===================================================== */
 .tasks-grid {
     display: grid;
@@ -238,7 +238,7 @@ p {
 }
 
 /* =====================================================
-   ESTADOS DE LAS TAREAS (CHIPS SARRADOS A VARIABLES VIVAS)
+   ESTADOS DE LAS TAREAS (CHIPS ADAPTADOS A VARIABLES VIVAS)
 ===================================================== */
 .status-chip {
     display: inline-flex;
@@ -320,7 +320,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* =====================================================
-   VISTA PREVIA DEL FORMULARIO
+   VISTA PREVIA
 ===================================================== */
 .task-preview {
     background: var(--card);
@@ -422,7 +422,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* =====================================================
-   TARJETAS GENERADAS DESDE JAVASCRIPT ("MIS TAREAS")
+   TARJETAS GENERADAS DESDE JAVASCRIPT
 ===================================================== */
 .user-task-card {
     background: var(--card);
@@ -442,7 +442,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* =====================================================
-   BOTONES INTERNOS DE ACCIÓN EN TAREAS PERSONALIZADAS
+   BOTONES INTERNOS DE ACCIÓN DE TAREAS
 ===================================================== */
 .task-buttons {
     display: flex;
@@ -466,7 +466,7 @@ input:focus, select:focus, textarea:focus {
     transform: translateY(-1px);
 }
 
-/* Botón Eliminar Corregido: Nace rojo vivo */
+/* Botón Eliminar corregido: Rojo vivo por defecto */
 .delete-button {
     background: var(--estado-rojo);
     color: #ffffff;
@@ -479,11 +479,11 @@ input:focus, select:focus, textarea:focus {
 }
 
 .delete-button:hover {
-    background: #cc3333; /* Matiz rojo oscuro para simular profundidad */
+    background: #cc3333; /* Un matiz de rojo más oscuro */
     transform: translateY(-1px);
 }
 
-/* MENSAJE CUANDO NO EXISTEN REGISTROS */
+/* MENSAJE ESTADO VACÍO */
 .empty-state {
     margin-top: 14px;
     color: var(--brand-medium);
@@ -502,11 +502,11 @@ footer {
 }
 
 /* =====================================================
-   SECCIÓN DE TESTIMONIOS Y RECOMENDACIONES (CARRUSEL)
+   SECCIÓN DE RECOMENDACIONES Y CARRUSEL INFINITO
 ===================================================== */
 .testimonials-section {
     padding: 30px 0;
-    background-color: var(--bg-seccion) !important; /* Forzar fondo blanco estricto */
+    background-color: var(--bg-seccion) !important; /* Blanco puro */
 }
 
 .testimonials-section h2 {
@@ -524,14 +524,12 @@ footer {
 
 .testimonials-grid {
     display: flex;
-    flex-wrap: nowrap !important; /* Asegura una sola fila rígida horizontal */
+    flex-wrap: nowrap !important; 
     gap: 15px;
     padding: 15px 5px;
     overflow-x: auto;
     scroll-behavior: smooth;
     background-color: var(--bg-seccion) !important;
-    
-    /* Ocultar barra de scroll nativa en navegadores */
     scrollbar-width: none; 
     -ms-overflow-style: none; 
 }
@@ -540,7 +538,7 @@ footer {
     display: none !important;
 }
 
-/* TARJETAS DEL CARRUSEL: Congeladas a 250px para celulares */
+/* TARJETAS DEL CARRUSEL */
 .custom-recommendation-card {
     background: var(--bg-seccion);
     border-radius: 12px;
@@ -551,7 +549,7 @@ footer {
     flex-direction: column;
     position: relative;
     
-    /* Bloqueo estricto responsivo */
+    /* Bloqueo estricto de tamaño */
     flex: 0 0 250px !important;
     width: 250px !important;
     min-width: 250px !important;
@@ -576,7 +574,7 @@ footer {
 .card-image-wrapper img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important; /* Ajuste perfecto de fotos */
+    object-fit: cover !important;
 }
 
 .status-badge-floating {
@@ -658,7 +656,7 @@ footer {
 .next-btn { right: -20px; }
 
 /* =====================================================
-   DISEÑO RESPONSIVO (QUERIES DE ADAPTACIÓN PARA MÓVILES)
+   DISEÑO RESPONSIVO
 ===================================================== */
 @media(max-width:840px){
     .stats-grid {
@@ -673,7 +671,6 @@ footer {
 }
 
 @media(max-width:768px) {
-    /* Mueve las flechas adentro para que no se desborden de la pantalla del celular */
     .prev-btn { left: 2px; }
     .next-btn { right: 2px; }
 }
