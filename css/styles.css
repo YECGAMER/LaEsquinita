@@ -184,6 +184,13 @@ p {
     color: var(--brand-medium);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+#mis-tareas {
+    scroll-margin-top: 100px;
+}
 /* =====================================================
    BOTONES GENERALES DEL SISTEMA
 ===================================================== */
@@ -402,6 +409,7 @@ textarea:focus {
 .task-preview {
     min-width: 0;
 }
+
 
 /* =====================================================
    FILTROS DE MIS TAREAS
